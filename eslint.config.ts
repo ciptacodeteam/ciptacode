@@ -36,6 +36,12 @@ export default tseslint.config(
     },
   },
   {
+    files: ["**/*.js", "**/*.jsx"],
+    rules: {
+      "import/no-anonymous-default-export": "off",
+    }
+  },
+  {
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
