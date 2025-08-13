@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@/lib/utils";
+import AppProvider from "@/providers/AppProvider";
 
 export const metadata: Metadata = {
   title: "Ciptacode - ERP Development, Apps & Webs Developer",
@@ -123,7 +124,11 @@ export default function RootLayout({
   return (
     <html lang="en_ID" className={cn(satoshi.variable, bebasNeue.variable)}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <AppProvider>
+            {children}
+          </AppProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );
