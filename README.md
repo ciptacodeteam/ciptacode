@@ -1,29 +1,57 @@
-# Create T3 App
+# Ciptacode Agency Website
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is the official website for Ciptacode Agency, built using the modern T3 Stack: Next.js, Prisma, TailwindCSS, and BetterAuth.
 
-## What's next? How do I make an app with this?
+## Tech Stack
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Next.js** – React framework for server-side rendering and routing
+- **Prisma** – ORM for database management
+- **TailwindCSS** – Utility-first CSS framework
+- **BetterAuth** – Authentication solution
+- **T3 Stack** – Integration of Next.js, TypeScript, TailwindCSS, and tRPC
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Setup Preparation
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+### Prerequisites
 
-## Learn More
+- Node.js (v18+ recommended) or Bun JS
+- npm or bun
+- PostgreSQL (or your preferred database)
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### Installation
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+1. **Clone the repository**
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+2. **Install dependencies**
 
-## How do I deploy this?
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+3. **Configure environment variables**
+   - Copy `.env.example` to `.env` and update values for your database and authentication provider.
+
+4. **Set up the database**
+
+   ```bash
+    npm run db:push
+    # or
+    bun run db:push
+   ```
+
+5. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   bun dev
+   ```
+
+## License
+
+MIT
+
+---
+
+Feel free to contribute or open issues for improvements!
