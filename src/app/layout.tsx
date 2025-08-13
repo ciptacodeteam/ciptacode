@@ -5,6 +5,7 @@ import { Bebas_Neue } from "next/font/google";
 import localFont from "next/font/local";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Ciptacode - ERP Development, Apps & Webs Developer",
@@ -120,7 +121,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en_ID" className={`${satoshi.variable} ${bebasNeue.variable}`}>
+    <html lang="en_ID" className={cn(satoshi.variable, bebasNeue.variable)}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
