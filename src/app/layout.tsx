@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@/lib/utils";
 import AppProvider from "@/providers/AppProvider";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Ciptacode - ERP Development, Apps & Webs Developer",
@@ -127,6 +128,7 @@ export default function RootLayout({
         <TRPCReactProvider>
           <AppProvider>
             {children}
+            <Toaster/>
           </AppProvider>
         </TRPCReactProvider>
       </body>
