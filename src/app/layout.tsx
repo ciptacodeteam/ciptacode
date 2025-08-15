@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@/lib/utils";
 import AppProvider from "@/providers/AppProvider";
 import { Toaster } from "sonner";
-
+import { ErrorBoundary } from "@/components/ui/error-boundary";
 
 export const metadata: Metadata = {
   title: "Ciptacode - ERP Development, Apps & Webs Developer",
@@ -124,14 +124,20 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en_ID" className={cn(satoshi.variable, bebasNeue.variable)}>
-      <body>
-        <TRPCReactProvider>
-          <AppProvider>
-            {children}
-            <Toaster/>
-          </AppProvider>
-        </TRPCReactProvider>
+    <html
+      lang="en_ID"
+      className={cn(satoshi.variable, bebasNeue.variable)}
+      suppressHydrationWarning
+    >
+      <body className="bg-background min-h-screen font-sans antialiased">
+        <ErrorBoundary>
+          <TRPCReactProvider>
+            <AppProvider>
+              {children}
+              <Toaster />
+            </AppProvider>
+          </TRPCReactProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

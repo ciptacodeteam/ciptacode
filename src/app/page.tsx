@@ -1,10 +1,24 @@
+import MainFooter from "@/components/footers/MainFooter";
+import MainHeader from "@/components/headers/MainHeader";
+import ClientMarqueeSection from "@/components/sections/ClientMarqueeSection";
+import HeroSection from "@/components/sections/HeroSection";
+import ServiceHighlightSection from "@/components/sections/ServiceHighlightSection";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+
 const HomePage = () => {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Hello, welcome to Ciptacode Agency Website!
-      </h1>
-    </div>
+    <main className="bg-[#F0F4FA]">
+      <MainHeader />
+
+      <HeroSection />
+      <ClientMarqueeSection />
+      <div className="separator-angular h-4 w-full"></div>
+
+      <ServiceHighlightSection />
+
+      <ScrollToTop />
+      <MainFooter />
+    </main>
   );
 };
 export default HomePage;
