@@ -7,7 +7,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 const HomePage = () => {
   return (
-    <main className="bg-[#F0F4FA]">
+    <main>
       <MainHeader />
 
       <HeroSection />
