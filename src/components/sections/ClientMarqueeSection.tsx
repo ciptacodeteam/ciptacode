@@ -26,7 +26,7 @@ const ClientMarqueeSection = () => {
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={`${client}-${index}`}
-                className="text-background hover:text-primary flex-shrink-0 px-6 text-2xl font-semibold transition-colors duration-300"
+                className="text-background flex-shrink-0 px-6 text-2xl font-semibold transition-colors duration-300"
               >
                 {client}
               </div>
