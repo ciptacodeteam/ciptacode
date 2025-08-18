@@ -16,7 +16,7 @@ const CTASection = () => {
       ref={ref}
       className="via-background from-accent/10 bg-gradient-to-r to-orange-500/10 py-24"
     >
-      <div className="container px-4">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

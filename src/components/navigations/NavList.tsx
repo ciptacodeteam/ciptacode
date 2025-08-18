@@ -31,7 +31,7 @@ const NavList = () => {
   const pathname = usePathname();
 
   return (
-    <ul className="flex space-x-8">
+    <ul className="flex flex-col space-y-6 space-x-8 md:flex-row md:space-y-0">
       {mainMenus.map((item) => (
         <li key={item.path}>
           <Link

@@ -7,7 +7,14 @@ import "./src/env.js";
 
 const config = {
   images: {
-    domains: ["www.ciptacode.id"],
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
+      },
+    ],
   },
 } satisfies NextConfig;
 

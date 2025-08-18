@@ -15,8 +15,8 @@ const BrandLogo = ({ clickable }: Props) => {
             src={Logo}
             width={120}
             height={120}
-            objectFit="contain"
             alt="Ciptacode Logo"
+            className="object-contain"
           />
         </Link>
       ) : (
@@ -24,8 +24,8 @@ const BrandLogo = ({ clickable }: Props) => {
           src={Logo}
           width={120}
           height={120}
-          objectFit="contain"
           alt="Ciptacode Logo"
+          className="object-contain"
         />
       )}
     </>

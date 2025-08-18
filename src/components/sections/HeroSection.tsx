@@ -22,6 +22,7 @@ const HeroSection = () => {
           <motion.div
             key={i}
             className="bg-accent/30 absolute h-1 w-1 rounded-full"
+            suppressHydrationWarning
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
