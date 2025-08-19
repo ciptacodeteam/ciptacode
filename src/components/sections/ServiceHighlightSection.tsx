@@ -104,7 +104,10 @@ const ServiceHighlightSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <Badge variant="outline" className="mb-4 px-4 py-2">
+          <Badge
+            variant="outline"
+            className="text-primary border-primary/20 mb-4 px-4 py-2"
+          >
             <TrendingUp className="mr-2 h-4 w-4" />
             Proven Results for 100+ Clients
           </Badge>

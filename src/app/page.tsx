@@ -8,6 +8,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import PortfolioHighlightSection from "@/components/sections/PortfolioHighlightSection";
 import ServiceHighlightSection from "@/components/sections/ServiceHighlightSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
+import WorkflowSection from "@/components/sections/WorkflowSection";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 const HomePage = () => {
@@ -20,6 +21,7 @@ const HomePage = () => {
       <div className="separator-angular h-4 w-full"></div>
 
       <ServiceHighlightSection />
+      <WorkflowSection />
       <PortfolioHighlightSection />
       <AnimatedStatSection />
       <FeaturedCaseStudySection />
