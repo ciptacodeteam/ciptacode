@@ -37,24 +37,36 @@ const PortfolioCTASection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <Button asChild size="lg" className="glow-primary group">
-              <Link href="/contact">
-                Start Your Project
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="group bg-transparent"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Link href="/contact">
-                <MessageCircle className="mr-2 h-4 w-4" />
-                Discuss Your Ideas
-              </Link>
-            </Button>
+              <Button asChild size="lg" className="glow-primary group">
+                <Link href="/contact">
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="group bg-transparent"
+              >
+                <Link href="/contact">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  Discuss Your Ideas
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

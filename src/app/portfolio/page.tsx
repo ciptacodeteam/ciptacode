@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import PortfolioHero from "@/components/portfolio/PortfolioHeroSection";
-import PortfolioGallery from "@/components/portfolio/PortfolioGallerySection";
-import PortfolioStats from "@/components/portfolio/PortfolioStatSection";
-import PortfolioCTA from "@/components/portfolio/PortfolioCTASection";
+import PortfolioHeroSection from "@/components/portfolio/PortfolioHeroSection";
+import PortfolioGallerySection from "@/components/portfolio/PortfolioGallerySection";
+import PortfolioStatSection from "@/components/portfolio/PortfolioStatSection";
+import PortfolioCTASection from "@/components/portfolio/PortfolioCTASection";
 import MainHeader from "@/components/headers/MainHeader";
 import MainFooter from "@/components/footers/MainFooter";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import ClientMarqueeSection from "@/components/sections/ClientMarqueeSection";
 
 export const metadata: Metadata = {
   title: "Portfolio - Ciptacode | Our Latest Projects & Case Studies",
@@ -23,10 +24,12 @@ const PortfolioPage = () => {
     <main>
       <MainHeader />
 
-      <PortfolioHero />
-      <PortfolioGallery />
-      <PortfolioStats />
-      <PortfolioCTA />
+      <PortfolioHeroSection />
+      <PortfolioGallerySection />
+      <PortfolioStatSection />
+      <PortfolioCTASection />
+      <ClientMarqueeSection />
+      <div className="separator-angular h-4 w-full"></div>
 
       <MainFooter />
       <ScrollToTop />

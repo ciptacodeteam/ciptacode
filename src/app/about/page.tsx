@@ -6,6 +6,7 @@ import AboutCTASection from "@/components/about/AboutCTASection";
 import MainFooter from "@/components/footers/MainFooter";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import MainHeader from "@/components/headers/MainHeader";
+import ClientMarqueeSection from "@/components/sections/ClientMarqueeSection";
 
 export const metadata: Metadata = {
   title: "About Us - Ciptacode | Our Mission, Team & Values",
@@ -26,6 +27,8 @@ const AboutPage = () => {
       <MissionValueSection />
       <TeamGridSection />
       <AboutCTASection />
+      <ClientMarqueeSection />
+      <div className="separator-angular h-4 w-full"></div>
       <MainFooter />
       <ScrollToTop />
     </main>
