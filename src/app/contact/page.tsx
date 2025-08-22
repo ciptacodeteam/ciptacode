@@ -2,7 +2,6 @@ import ContactFormSection from "@/components/contact/ContactFormSection";
 import ContactHeroSection from "@/components/contact/ContactHeroSection";
 import ContactInfoSection from "@/components/contact/ContactInfoSection";
 import type { Metadata } from "next";
-// import ContactMap  from "@/components/contact/contact-map";
 import MainFooter from "@/components/footers/MainFooter";
 import MainHeader from "@/components/headers/MainHeader";
 import ClientMarqueeSection from "@/components/sections/ClientMarqueeSection";
