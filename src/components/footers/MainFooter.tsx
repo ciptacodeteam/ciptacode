@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -17,7 +15,7 @@ const MainFooter = () => {
           {/* About */}
           <div className="max-w-md space-y-4">
             <BrandLogo clickable />
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground mt-6 text-sm">
               Crafting reliable digital solutions for startups and enterprises.
               We help you build, scale, and ship faster with exceptional UX.
             </p>
@@ -135,23 +133,24 @@ const MainFooter = () => {
 
           {/* Contact & Newsletter */}
           <div className="max-w-md space-y-4">
-            <h3 className="text-lg font-semibold">Stay Updated</h3>
-            <p className="text-muted-foreground text-sm">
-              Get the latest updates on our projects and insights.
-            </p>
-            <div className="flex space-x-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1"
-              />
-              <Button size="sm">Subscribe</Button>
+            <h3 className="text-lg font-semibold">Contact Us</h3>
+            {/* <p className="text-muted-foreground text-sm">
+              Want to discuss your project?
+            </p> */}
+            <div className="text-muted-foreground space-y-1 text-sm">
+              <p>Phone number:</p>
+              <Link
+                href="/contact"
+                className="text-primary text-base font-extrabold"
+              >
+                +62 812-3456-7890
+              </Link>
             </div>
             <div className="text-muted-foreground text-sm">
-              <p>Contact us:</p>
+              <p>Email address:</p>
               <Link
                 href="mailto:ciptaprojects@gmail.com"
-                className="text-primary"
+                className="text-primary text-base font-bold hover:underline"
               >
                 ciptaprojects@gmail.com
               </Link>

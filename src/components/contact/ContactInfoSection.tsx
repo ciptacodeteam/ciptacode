@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { Check, Copy, Mail, Phone } from "lucide-react";
 import { useRef, useState } from "react";
@@ -100,8 +101,14 @@ const ContactInfoSection = () => {
             <div>
               <h3 className="text-navy-900 mb-2 font-bold">Office Hours</h3>
               <div className="space-y-1 text-sm text-gray-600">
-                <div>Monday - Friday: 9:00 AM - 6:00 PM PST</div>
-                <div>Saturday - Sunday: Emergency support only</div>
+                <div>
+                  Monday - Friday: <br className="md:hidden" /> 9:00 AM - 6:00
+                  PM PST
+                </div>
+                <div>
+                  Saturday - Sunday: <br className="md:hidden" /> Emergency
+                  support only
+                </div>
               </div>
             </div>
             <div className="text-right">
@@ -144,7 +151,7 @@ const ContactInfoSection = () => {
                         <detail.icon className="h-7 w-7 text-white" />
                       </motion.div>
                       <div>
-                        <h3 className="text-navy-900 mb-1 text-lg font-bold">
+                        <h3 className="text-navy-900 mb-1 text-base font-bold">
                           {detail.title}
                         </h3>
                         <div className="mb-1 flex items-center space-x-2">
@@ -188,10 +195,21 @@ const ContactInfoSection = () => {
                         <div className="text-xs text-gray-500">
                           {detail.description}
                         </div>
+                        <Button
+                          className={cn(
+                            `mt-4 block bg-gradient-to-r font-semibold text-white transition-all duration-300 group-hover:scale-105 hover:shadow-lg sm:hidden md:block lg:hidden`,
+                            detail.color,
+                          )}
+                        >
+                          {detail.action}
+                        </Button>
                       </div>
                     </div>
                     <Button
-                      className={`bg-gradient-to-r ${detail.color} font-semibold text-white transition-all duration-300 group-hover:scale-105 hover:shadow-lg`}
+                      className={cn(
+                        `hidden bg-gradient-to-r font-semibold text-white transition-all duration-300 group-hover:scale-105 hover:shadow-lg sm:block md:hidden lg:block`,
+                        detail.color,
+                      )}
                     >
                       {detail.action}
                     </Button>
