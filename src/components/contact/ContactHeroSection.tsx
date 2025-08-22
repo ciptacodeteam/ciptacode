@@ -1,11 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import {
+  CalendarDays,
+  MessageCircle,
+  MessageCircleMore,
+  SendIcon,
+} from "lucide-react";
 
 const ContactHeroSection = () => {
   return (
-    <section className="from-background via-background to-primary/5 relative overflow-hidden bg-gradient-to-br py-24">
+    <section className="from-background via-background to-primary/5 relative overflow-hidden bg-gradient-to-br py-24 pt-42">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="bg-primary/10 animate-float absolute top-20 right-20 h-64 w-64 rounded-full blur-3xl" />
@@ -15,7 +20,7 @@ const ContactHeroSection = () => {
         />
       </div>
 
-      <div className="relative z-10 container px-4">
+      <div className="relative z-10 container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +42,7 @@ const ContactHeroSection = () => {
               Connect
             </span>
           </h1>
-          <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg md:text-xl">
+          <p className="text-muted-foreground mx-auto mb-14 max-w-2xl text-lg md:text-xl">
             Ready to transform your business with reliable digital solutions?
             We&apos;d love to hear about your project and discuss how we can
             help you achieve your goals.
@@ -49,21 +54,32 @@ const ContactHeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-muted-foreground mx-auto grid max-w-2xl grid-cols-1 gap-6 text-sm md:grid-cols-3"
           >
-            <div>
-              <div className="text-foreground font-semibold">Response Time</div>
-              <div>Within 24 hours</div>
-            </div>
-            <div>
-              <div className="text-foreground font-semibold">
-                Free Consultation
+            <div className="flex items-center gap-3">
+              <SendIcon size={24} className="text-primary" />
+              <div className="text-start">
+                <div className="text-foreground font-semibold">
+                  Response Time
+                </div>
+                <div>Within 24 hours</div>
               </div>
-              <div>No commitment required</div>
             </div>
-            <div>
-              <div className="text-foreground font-semibold">
-                Project Timeline
+            <div className="flex items-center gap-3">
+              <MessageCircleMore size={24} className="text-primary" />
+              <div className="text-left">
+                <div className="text-foreground font-semibold">
+                  Free Consultation
+                </div>
+                <div>No commitment required</div>
               </div>
-              <div>Custom estimates provided</div>
+            </div>
+            <div className="flex items-center gap-3">
+              <CalendarDays size={24} className="text-primary" />
+              <div className="text-left">
+                <div className="text-foreground font-semibold">
+                  Project Timeline
+                </div>
+                <div>Custom estimates provided</div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
