@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Web Developer Indonesia",
     "Digital Agency",
   ],
-  authors: [{ name: "Ciptacode Team", url: "https://www.ciptacode.id" }],
+  authors: [{ name: "Ciptacode Team", url: "https://ciptacode.vercel.app" }],
   creator: "Ciptacode Team",
   publisher: "Ciptacode",
   robots: {
@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     title: "Ciptacode - ERP Development, Apps & Webs Developer",
     description:
       "Ciptacode — Digital agency in Indonesia specializing in ERP Development, Website Development, and Apps & Web Solutions for startups and enterprises.",
-    url: "https://www.ciptacode.id",
+    url: "https://ciptacode.vercel.app",
     siteName: "Ciptacode",
     images: [
       {
-        url: "https://www.ciptacode.id/images/og-banner.jpg",
+        url: "https://ciptacode.vercel.app/images/og-banner.jpg",
         width: 1200,
         height: 630,
         alt: "Ciptacode Landing Page Banner",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Ciptacode - ERP Development, Apps & Webs Developer",
     description:
       "Ciptacode — Digital agency in Indonesia specializing in ERP Development, Website Development, and Apps & Web Solutions for startups and enterprises.",
-    images: ["https://www.ciptacode.id/images/twitter-banner.jpg"],
+    images: ["https://ciptacode.vercel.app/images/twitter-banner.jpg"],
     creator: "@ciptacode",
   },
 };
