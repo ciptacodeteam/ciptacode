@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import AboutHero from "@/components/about/AboutHeroSection";
-import MissionValues from "@/components/about/MissionValueSection";
-import TeamGrid from "@/components/about/TeamGridSection";
-import AboutCTA from "@/components/about/AboutCTASection";
+import AboutHeroSection from "@/components/about/AboutHeroSection";
+import MissionValueSection from "@/components/about/MissionValueSection";
+import TeamGridSection from "@/components/about/TeamGridSection";
+import AboutCTASection from "@/components/about/AboutCTASection";
 import MainFooter from "@/components/footers/MainFooter";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import MainHeader from "@/components/headers/MainHeader";
@@ -22,10 +22,10 @@ const AboutPage = () => {
   return (
     <main>
       <MainHeader />
-      <AboutHero />
-      <MissionValues />
-      <TeamGrid />
-      <AboutCTA />
+      <AboutHeroSection />
+      <MissionValueSection />
+      <TeamGridSection />
+      <AboutCTASection />
       <MainFooter />
       <ScrollToTop />
     </main>

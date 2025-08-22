@@ -36,6 +36,7 @@ const NavList = () => {
         <li key={item.path}>
           <Link
             href={item.path}
+            prefetch
             className={cn(
               "relative text-gray-600 transition-colors duration-200",
               item.path === pathname && "text-primary font-bold",

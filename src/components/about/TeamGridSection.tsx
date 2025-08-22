@@ -5,10 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandTwitter,
+  IconBrandX,
 } from "@tabler/icons-react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 
 const team = [
@@ -104,9 +105,9 @@ const TeamGridSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8, scale: 1.03 }}
             >
-              <Card className="glass group h-full overflow-hidden border-0 py-0">
+              <Card className="group h-full overflow-hidden rounded-2xl border-0 bg-white/10 py-0 shadow-xl backdrop-blur-lg transition-all duration-300 hover:bg-white/20 hover:shadow-2xl">
                 <div className="relative">
                   <Image
                     src={
@@ -114,48 +115,73 @@ const TeamGridSection = () => {
                       "https://placehold.co/300x300?text=No+Image"
                     }
                     alt={member.name}
-                    className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-56 w-full rounded-t-2xl object-cover transition-transform duration-500 group-hover:scale-105"
                     width={300}
                     height={300}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute right-4 bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <div className="flex justify-center space-x-2">
-                      {member.social.linkedin && (
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          className="h-8 w-8 p-0"
+                  <div className="absolute inset-0 rounded-t-2xl bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute right-4 bottom-4 left-4 flex justify-center space-x-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {member.social.linkedin && (
+                      <Button
+                        size="icon"
+                        variant="secondary"
+                        className="hover:bg-primary/80 h-9 w-9 rounded-full p-0 shadow-md hover:text-white"
+                        asChild
+                      >
+                        <Link
+                          href={member.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <IconBrandLinkedin className="h-4 w-4" />
-                        </Button>
-                      )}
-                      {member.social.twitter && (
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          className="h-8 w-8 p-0"
+                          <IconBrandLinkedin className="h-5 w-5" />
+                        </Link>
+                      </Button>
+                    )}
+                    {member.social.twitter && (
+                      <Button
+                        size="icon"
+                        variant="secondary"
+                        className="hover:bg-primary/80 h-9 w-9 rounded-full p-0 shadow-md hover:text-white"
+                        asChild
+                      >
+                        <Link
+                          href={member.social.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <IconBrandTwitter className="h-4 w-4" />
-                        </Button>
-                      )}
-                      {member.social.github && (
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          className="h-8 w-8 p-0"
+                          <IconBrandX className="h-5 w-5" />
+                        </Link>
+                      </Button>
+                    )}
+                    {member.social.github && (
+                      <Button
+                        size="icon"
+                        variant="secondary"
+                        className="hover:bg-primary/80 h-9 w-9 rounded-full p-0 shadow-md hover:text-white"
+                        asChild
+                      >
+                        <a
+                          href={member.social.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <IconBrandGithub className="h-4 w-4" />
-                        </Button>
-                      )}
-                    </div>
+                          <IconBrandGithub className="h-5 w-5" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
 
-                <CardContent className="p-6 text-center">
-                  <h3 className="mb-1 text-xl font-semibold">{member.name}</h3>
-                  <p className="text-primary mb-3 font-medium">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                <CardContent className="p-7 pt-2 text-center">
+                  <h3 className="from-primary to-accent mb-2 bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary mb-4 text-sm font-medium">
+                    {member.role}
+                  </p>
+                  <p className="text-muted-foreground mb-2 text-sm">
+                    {member.bio}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>

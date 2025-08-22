@@ -7,9 +7,15 @@
   --font-sans:
     var(--font-satoshi), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-bebas: var(--font-bebas);
 }
 
 @theme inline {
+  --font-satoshi:
+    "Satoshi", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-bebas: "Bebas Neue", ui-sans-serif, system;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
