@@ -1,6 +1,7 @@
 import {
-  IconBrandGithub,
+  IconBrandInstagram,
   IconBrandLinkedin,
+  IconBrandTiktok,
   IconBrandWhatsapp,
   IconMail,
 } from "@tabler/icons-react";
@@ -24,8 +25,8 @@ const MainFooter = () => {
                 href="#"
                 className="text-muted-foreground hover:text-primary"
               >
-                <IconBrandGithub size={20} />
-                <span className="sr-only">GitHub</span>
+                <IconBrandInstagram size={20} />
+                <span className="sr-only">Instagram</span>
               </Link>
               <Link
                 href="#"
@@ -47,6 +48,13 @@ const MainFooter = () => {
               >
                 <IconMail size={20} />
                 <span className="sr-only">Email</span>
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary"
+              >
+                <IconBrandTiktok size={20} />
+                <span className="sr-only">Tiktok</span>
               </Link>
             </div>
           </div>
@@ -80,14 +88,6 @@ const MainFooter = () => {
                     Apps & Web Development
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/pricing"
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    Pricing
-                  </Link>
-                </li>
               </ul>
             </div>
 
@@ -105,26 +105,26 @@ const MainFooter = () => {
                 </li>
                 <li>
                   <Link
-                    href="/blog"
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/about"
                     className="text-muted-foreground hover:text-primary"
                   >
                     About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    Blog
                   </Link>
                 </li>
               </ul>
