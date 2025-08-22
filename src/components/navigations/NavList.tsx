@@ -25,6 +25,10 @@ const mainMenus = [
     label: "Contact",
     path: "/contact",
   },
+  {
+    label: "Blog",
+    path: "/blog",
+  },
 ];
 
 const NavList = () => {
