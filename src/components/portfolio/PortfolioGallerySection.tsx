@@ -265,7 +265,7 @@ const PortfolioGallerySection = () => {
                             Quick View
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                        <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
                           {selectedProject && (
                             <>
                               <DialogHeader>
@@ -323,7 +323,7 @@ const PortfolioGallerySection = () => {
                                       </div>
                                     ))}
                                   </div>
-                                  <Button asChild className="w-full">
+                                  <Button asChild className="mt-4 w-full">
                                     <Link
                                       href={`/case-studies/${selectedProject.slug}`}
                                     >
