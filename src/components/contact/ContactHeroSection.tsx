@@ -52,7 +52,7 @@ const ContactHeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-muted-foreground mx-auto grid max-w-2xl grid-cols-1 gap-6 text-sm md:grid-cols-3"
+            className="text-muted-foreground mx-auto grid max-w-2xl grid-cols-1 gap-6 px-4 text-sm md:grid-cols-3"
           >
             <div className="flex items-center gap-3">
               <SendIcon size={24} className="text-primary" />

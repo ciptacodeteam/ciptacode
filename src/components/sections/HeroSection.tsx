@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="from-background via-background to-accent/5 relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br via-40%">
+    <section className="from-background via-background to-accent/5 relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br via-40% pt-42">
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float absolute -top-40 -right-40 h-80 w-80 rounded-full bg-cyan-500/5 blur-3xl" />
         <div
@@ -40,7 +40,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container px-4">
+      <div className="relative z-10 container mb-16 px-4 lg:mb-0">
         <div className="mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
