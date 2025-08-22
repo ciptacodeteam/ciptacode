@@ -27,7 +27,7 @@ const MainHeader = () => {
     >
       <nav
         className={cn(
-          "text-primary rounded-b-4xl bg-white px-4 py-6 transition-all duration-300 ease-in-out md:px-10",
+          "text-primary bg-white px-4 py-6 transition-all duration-300 ease-in-out md:px-10",
           isScrolled && "shadow-soft",
         )}
       >
