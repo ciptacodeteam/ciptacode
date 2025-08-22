@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "../ui/badge";
 
 const testimonials = [
   {
@@ -35,7 +36,10 @@ const TestimonialSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="bg-muted/30 py-24">
+    <section
+      ref={ref}
+      className="via-background to-accent/5 bg-gradient-to-r from-cyan-500/5 py-24"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,6 +47,12 @@ const TestimonialSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
+          <Badge
+            variant="outline"
+            className="text-primary border-primary/20 mb-4 px-4 py-2"
+          >
+            Client Testimonials
+          </Badge>
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
             What Our Clients Say
           </h2>

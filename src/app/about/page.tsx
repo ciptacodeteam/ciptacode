@@ -31,10 +31,10 @@ const AboutPage = () => {
       <MissionValueSection />
       <TeamGridSection />
 
-      <AnimatedStatSection />
       <FeaturedCaseStudySection />
-      <TestimonialSection />
+      <AnimatedStatSection />
       <ContactInfoSection />
+      <TestimonialSection />
 
       <AboutCTASection />
       <ClientMarqueeSection />

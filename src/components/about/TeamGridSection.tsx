@@ -82,7 +82,10 @@ const TeamGridSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="bg-muted/30 py-24">
+    <section
+      ref={ref}
+      className="via-background to-accent/5 bg-gradient-to-r from-cyan-500/5 py-24"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

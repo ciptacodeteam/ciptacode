@@ -82,7 +82,7 @@ const PortfolioHighlightSection = () => {
         >
           <Badge
             variant="outline"
-            className="text-primary border-primary/20 mb-4"
+            className="text-primary border-primary/20 mb-4 px-4 py-2"
           >
             Featured Projects
           </Badge>

@@ -22,8 +22,14 @@ const FeaturedCaseStudySection = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+          <Badge
+            variant="outline"
+            className="text-primary border-primary/20 mb-4 px-4 py-2"
+          >
             Featured Case Study
+          </Badge>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            Transforming Retail with Technology
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
             See how we helped transform a traditional retail business into a
