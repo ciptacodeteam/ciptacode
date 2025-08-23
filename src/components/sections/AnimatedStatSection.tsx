@@ -35,10 +35,10 @@ function AnimatedNumber({
 }
 
 const stats = [
-  { value: 150, suffix: "+", label: "Projects Delivered" },
+  { value: 100, suffix: "+", label: "Projects Delivered" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 50, suffix: "+", label: "Happy Clients" },
-  { value: 24, suffix: "/7", label: "Support Available" },
+  { value: 95, suffix: "+", label: "Happy Clients" },
+  { value: 24, suffix: "/5", label: "Support Available" },
 ];
 
 const AnimatedStatSection = () => {
