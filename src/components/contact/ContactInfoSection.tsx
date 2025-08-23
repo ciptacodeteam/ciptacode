@@ -133,12 +133,12 @@ const ContactInfoSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ x: 5, scale: 1.02 }}
-              className="group cursor-pointer"
+              className="group"
             >
               <Card className="border-0 bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
                 <CardContent className="px-6">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-start space-x-4 lg:items-center">
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{
@@ -151,7 +151,7 @@ const ContactInfoSection = () => {
                         <detail.icon className="h-7 w-7 text-white" />
                       </motion.div>
                       <div>
-                        <h3 className="text-navy-900 mb-1 text-base font-bold">
+                        <h3 className="text-muted-foreground lg:text-navy-900 mb-1 text-xs lg:text-base lg:font-bold">
                           {detail.title}
                         </h3>
                         <div className="mb-1 flex items-center space-x-2">
