@@ -55,7 +55,7 @@ const HeroSection = () => {
               className="bg-accent/10 text-accent mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
             >
               <Award className="h-4 w-4" />
-              Trusted by 200+ businesses worldwide
+              Trusted by 100+ growing brands
             </motion.div>
 
             <motion.h1 className="mb-6 space-x-4 text-4xl leading-tight font-bold md:text-6xl lg:text-7xl">
@@ -71,7 +71,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="inline-block bg-gradient-to-r from-blue-500 from-40% to-[#3CC9A7] bg-clip-text text-transparent"
+                className="separator-angular inline-block bg-gradient-to-r bg-clip-text text-transparent"
               >
                 Business{" "}
               </motion.span>
@@ -110,7 +110,7 @@ const HeroSection = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground glow-accent group px-8 py-6 text-lg font-semibold"
+                  className="group px-8 py-6 text-lg font-semibold"
                 >
                   <Link href="/contact">
                     Get Free Quote
@@ -145,7 +145,7 @@ const HeroSection = () => {
               className="text-muted-foreground mb-8 text-sm"
             >
               ⚡ Free consultation this week • 💯 100% satisfaction guarantee •
-              🚀 Launch in 4-8 weeks
+              🚀 Launch in 1-2 weeks
             </motion.p>
           </motion.div>
 

@@ -78,7 +78,10 @@ const WorkflowSection = () => {
             Our Workflow
           </Badge>
           <h2 className="mb-4 text-4xl font-bold text-slate-900">
-            How We Work <span className="text-blue-600">Together</span>
+            How We Work{" "}
+            <span className="separator-angular inline-block bg-gradient-to-r bg-clip-text pb-1 text-transparent">
+              Together
+            </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-slate-600">
             A clear, structured process with transparent pricing and defined
