@@ -16,7 +16,7 @@ const MainFooter = () => {
           {/* About */}
           <div className="max-w-md space-y-4">
             <BrandLogo clickable />
-            <p className="text-muted-foreground mt-6 text-sm">
+            <p className="text-muted-foreground mt-5 text-sm">
               Crafting reliable digital solutions for startups and enterprises.
               We help you build, scale, and ship faster with exceptional UX.
             </p>
