@@ -186,8 +186,9 @@ const WorkflowSection = () => {
             >
               <Button
                 asChild
+                variant="outline"
                 size="lg"
-                className="glow-accent group bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
+                className="group hover:bg-accent text-foreground hover:border-accent bg-white hover:text-white"
               >
                 <Link href="/contact">
                   Start Your Project

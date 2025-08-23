@@ -42,7 +42,7 @@ const CTASection = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button asChild size="lg" className="glow-primary group">
+              <Button asChild size="lg" className="group">
                 <Link href="/contact">
                   Start Your Project
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
