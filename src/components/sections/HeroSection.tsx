@@ -7,14 +7,14 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="from-background via-background to-accent/5 relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br via-40% pt-42">
+    <section className="from-background via-background to-accent/5 relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br via-40% pt-42 lg:pt-24">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float absolute -top-40 -right-40 h-80 w-80 rounded-full bg-cyan-500/5 blur-3xl" />
+        <div className="animate-float absolute -top-40 -right-40 size-80 rounded-full bg-cyan-500/5 blur-3xl" />
         <div
-          className="animate-float absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-yellow-300/20 blur-3xl"
+          className="animate-float absolute -bottom-40 -left-40 size-80 rounded-full bg-yellow-300/20 blur-3xl"
           style={{ animationDelay: "2s" }}
         />
-        <div className="to-accent/5 absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-gradient-to-r from-yellow-400/5 blur-3xl" />
+        <div className="to-accent/5 absolute top-1/2 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-gradient-to-r from-yellow-400/5 blur-3xl" />
       </div>
 
       <div className="absolute inset-0">
