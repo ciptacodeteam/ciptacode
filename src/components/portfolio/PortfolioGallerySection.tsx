@@ -247,7 +247,7 @@ const PortfolioGallerySection = () => {
                   }
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
-                  className="text-xs"
+                  className="hover:bg-primary text-xs"
                 >
                   {category}
                 </Button>
@@ -265,7 +265,7 @@ const PortfolioGallerySection = () => {
                   }
                   size="sm"
                   onClick={() => setSelectedIndustry(industry)}
-                  className="text-xs"
+                  className="hover:bg-primary text-xs"
                 >
                   {industry}
                 </Button>
