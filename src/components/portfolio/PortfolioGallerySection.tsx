@@ -313,92 +313,6 @@ const PortfolioGallerySection = () => {
                       {project.category}
                     </Badge>
                   </div>
-                  {/* <div className="absolute right-4 bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <div className="flex space-x-2">
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <Button
-                            size="sm"
-                            variant="secondary"
-                            onClick={() => setSelectedProject(project)}
-                            className="flex-1"
-                          >
-                            <Eye className="mr-2 h-4 w-4" />
-                            Quick View
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
-                          {selectedProject && (
-                            <>
-                              <DialogHeader>
-                                <DialogTitle className="text-2xl">
-                                  {selectedProject.title}
-                                </DialogTitle>
-                              </DialogHeader>
-                              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                                <div>
-                                  <Image
-                                    src={
-                                      selectedProject.image ||
-                                      "https://placehold.co/500x300?text=No+Image"
-                                    }
-                                    alt={selectedProject.title}
-                                    className="h-[268px] w-full rounded-lg object-cover"
-                                    width={500}
-                                    height={300}
-                                  />
-                                </div>
-                                <div className="space-y-4">
-                                  <p className="text-muted-foreground">
-                                    {selectedProject.description}
-                                  </p>
-                                  <div className="flex flex-wrap gap-2">
-                                    {selectedProject.technologies.map(
-                                      (tech) => (
-                                        <Badge key={tech} variant="outline">
-                                          {tech}
-                                        </Badge>
-                                      ),
-                                    )}
-                                  </div>
-                                  <div className="grid grid-cols-2 gap-4">
-                                    <div className="flex items-center space-x-2 text-sm">
-                                      <Calendar className="text-muted-foreground h-4 w-4" />
-                                      <span>{selectedProject.duration}</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2 text-sm">
-                                      <Users className="text-muted-foreground h-4 w-4" />
-                                      <span>{selectedProject.teamSize}</span>
-                                    </div>
-                                  </div>
-                                  <div className="grid grid-cols-3 gap-4 border-t pt-4">
-                                    {Object.entries(
-                                      selectedProject.metrics,
-                                    ).map(([key, value]) => (
-                                      <div key={key} className="text-center">
-                                        <div className="text-primary text-lg font-bold">
-                                          {value}
-                                        </div>
-                                        <div className="text-muted-foreground text-xs capitalize">
-                                          {key.replace(/([A-Z])/g, " $1")}
-                                        </div>
-                                      </div>
-                                    ))}
-                                  </div>
-                                  <Button asChild className="mt-4 w-full">
-                                    <Link href={selectedProject.previewLink}>
-                                      Visit Website
-                                      <ExternalLink className="ml-2 h-4 w-4" />
-                                    </Link>
-                                  </Button>
-                                </div>
-                              </div>
-                            </>
-                          )}
-                        </DialogContent>
-                      </Dialog>
-                    </div>
-                  </div> */}
                 </div>
 
                 <CardContent className="px-6 pb-6">
@@ -411,7 +325,7 @@ const PortfolioGallerySection = () => {
                     </span>
                   </div>
                   <h3 className="group-hover:text-primary mb-2 text-lg font-semibold transition-colors">
-                    {project.title}
+                    {project.client}
                   </h3>
                   <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
                     {project.description}
@@ -516,9 +430,16 @@ const PortfolioGallerySection = () => {
                         <Button
                           variant="outline"
                           size="sm"
+                          asChild
                           className="hover:bg-primary"
                         >
-                          <ExternalLink className="h-4 w-4" />
+                          <Link
+                            href={project.previewLink}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </Link>
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>

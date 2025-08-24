@@ -61,56 +61,42 @@ const PortfolioHighlightSection = () => {
               whileHover={{ y: -8 }}
               className="group"
             >
-              <Card className="glass h-full overflow-hidden border-0 py-0 transition-all duration-500 hover:shadow-2xl">
+              <Card className="glass group h-full cursor-pointer overflow-hidden border-0 py-0">
                 <div className="relative overflow-hidden">
                   <Image
-                    src={project.image || "https://placehold.co/600x400"}
+                    src={
+                      project.image ||
+                      "https://placehold.co/500x300?text=No+Image"
+                    }
                     alt={project.title}
                     className="h-[268px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    width={600}
-                    height={400}
+                    width={500}
+                    height={300}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <Badge className="bg-primary/90 text-primary-foreground absolute top-4 right-4">
-                    {project.category}
-                  </Badge>
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-primary/90 text-primary-foreground">
+                      {project.category}
+                    </Badge>
+                  </div>
                 </div>
 
                 <CardContent className="px-6 pb-6">
-                  <div className="text-muted-foreground mb-2 flex items-center gap-2 text-sm">
-                    <Calendar className="h-4 w-4" />
-                    {project.duration}
-                    <span className="mx-2">•</span>
-                    <Users className="h-4 w-4" />
-                    {project.client}
+                  <div className="mb-2 flex items-center justify-between">
+                    <Badge variant="outline" className="text-xs">
+                      {project.industry}
+                    </Badge>
+                    <span className="text-muted-foreground text-xs">
+                      {project.year}
+                    </span>
                   </div>
-
-                  <h3 className="group-hover:text-primary mb-3 text-xl font-bold transition-colors">
-                    {project.title}
+                  <h3 className="group-hover:text-primary mb-2 text-lg font-semibold transition-colors">
+                    {project.client}
                   </h3>
-
-                  <p className="text-muted-foreground mb-4 line-clamp-2">
+                  <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
                     {project.description}
                   </p>
 
-                  {/* Success Metrics */}
-                  <div className="mb-4 grid grid-cols-3 gap-2">
-                    {Object.entries(project.metrics).map(([key, value]) => (
-                      <div
-                        key={key}
-                        className="bg-muted/50 rounded-lg p-2 text-center"
-                      >
-                        <div className="text-primary text-sm font-bold">
-                          {value}
-                        </div>
-                        <div className="text-muted-foreground text-xs capitalize">
-                          {key}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Technologies */}
                   <div className="mb-4 flex flex-wrap gap-1">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <Badge key={tech} variant="secondary" className="text-xs">
@@ -210,9 +196,16 @@ const PortfolioHighlightSection = () => {
                         <Button
                           variant="outline"
                           size="sm"
+                          asChild
                           className="hover:bg-primary"
                         >
-                          <ExternalLink className="h-4 w-4" />
+                          <Link
+                            href={project.previewLink}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </Link>
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
