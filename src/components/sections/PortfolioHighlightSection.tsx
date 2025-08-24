@@ -16,6 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const PortfolioHighlightSection = () => {
   const ref = useRef(null);
@@ -204,9 +205,20 @@ const PortfolioHighlightSection = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="outline" size="sm">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="hover:bg-primary"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Live Preview</p>
+                      </TooltipContent>
+                    </Tooltip>
                   </div>
                 </CardContent>
               </Card>
