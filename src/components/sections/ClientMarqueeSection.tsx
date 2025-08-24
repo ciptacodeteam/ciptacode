@@ -1,35 +1,67 @@
 "use client";
 
+import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-const clients = [
-  "TechCorp",
-  "InnovateLab",
-  "DataFlow",
-  "CloudSync",
-  "NextGen",
-  "DigitalEdge",
-  "SmartSolutions",
-  "FutureWorks",
-  "CodeCraft",
-  "WebMasters",
-  "AppForge",
-  "DevStudio",
+type Client = {
+  name: string;
+  image: string;
+};
+
+const clients: Client[] = [
+  {
+    name: "7AA",
+    image: "/images/clients/7aa.svg",
+  },
+  {
+    name: "Skyview",
+    image: "/images/clients/skyview.svg",
+  },
+  {
+    name: "Sugar Baby",
+    image: "/images/clients/sugarbaby.svg",
+  },
+  {
+    name: "Ansama",
+    image: "/images/clients/ansama.svg",
+  },
+  {
+    name: "Velure",
+    image: "/images/clients/velure.svg",
+  },
+  {
+    name: "Mutual Property",
+    image: "/images/clients/mutual.svg",
+  },
+  {
+    name: "Yank Britz",
+    image: "/images/clients/yanknbritz.svg",
+  },
+  {
+    name: "MLI",
+    image: "/images/clients/mli.svg",
+  },
+  {
+    name: "Chez",
+    image: "/images/clients/chez.svg",
+  },
 ];
 
 const ClientMarqueeSection = () => {
   return (
-    <section className="bg-black py-8">
+    <section className="bg-black py-6">
       <div className="mx-auto">
         <div className="relative overflow-hidden">
           <Marquee autoFill speed={50}>
-            {[...clients, ...clients].map((client, index) => (
-              <div
-                key={`${client}-${index}`}
-                className="text-background flex-shrink-0 px-6 text-2xl font-semibold transition-colors duration-300"
-              >
-                {client}
-              </div>
+            {[...clients, ...clients].map((client, i) => (
+              <Image
+                key={`${client.name}-${i}`}
+                src={client.image}
+                alt={client.name}
+                className="h-12 w-42 px-8 transition duration-300 ease-in-out sm:h-12"
+                width={150}
+                height={48}
+              />
             ))}
           </Marquee>
         </div>
