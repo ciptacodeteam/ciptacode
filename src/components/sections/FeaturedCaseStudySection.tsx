@@ -45,7 +45,7 @@ const FeaturedCaseStudySection = () => {
           <Card className="glass overflow-hidden border-0 py-0">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Image placeholder */}
-              <div className="from-primary/20 to-accent/20 relative flex h-64 cursor-pointer items-center justify-center rounded bg-gradient-to-br lg:ml-6 lg:h-auto">
+              <div className="from-primary/20 to-accent/20 relative flex h-64 cursor-pointer items-center justify-center rounded bg-gradient-to-br lg:h-auto">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
