@@ -11,123 +11,182 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Calendar, ExternalLink, Users } from "lucide-react";
+import { Calendar, ExternalLink, Eye, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-const projects = [
+type Project = {
+  id: string;
+  previewLink: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  metrics: Record<string, string>;
+  duration: string;
+  client: string;
+  industry: string;
+  teamSize: string;
+  year: string;
+};
+
+export const portfolioProjects: Project[] = [
   {
-    id: "retailflow-erp",
-    title: "RetailFlow ERP System",
-    category: "ERP Development",
-    industry: "Retail",
-    description:
-      "Complete ERP transformation for a multi-location retail chain",
-    image: "https://placehold.co/600x400?text=No+Image",
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis"],
-    metrics: {
-      efficiency: "40%",
-      timeSaved: "60%",
-      costSavings: "$2M+",
-    },
-    year: "2024",
-    duration: "6 months",
-    teamSize: "8 developers",
-    slug: "retailflow-erp",
-  },
-  {
-    id: "fintech-mobile",
-    title: "FinanceFlow Mobile App",
-    category: "Mobile Development",
-    industry: "Fintech",
-    description:
-      "Cross-platform mobile banking application with advanced security",
-    image: "https://placehold.co/600x400?text=No+Image",
-    technologies: ["React Native", "TypeScript", "Firebase", "Stripe"],
-    metrics: {
-      users: "50K+",
-      rating: "4.8/5",
-      transactions: "$10M+",
-    },
-    year: "2024",
-    duration: "4 months",
-    teamSize: "6 developers",
-    slug: "fintech-mobile",
-  },
-  {
-    id: "healthcare-platform",
-    title: "MedConnect Platform",
+    id: "mutual-property",
+    previewLink: "https://mutualproperty.co.id",
+    title: "Real Estate Management System",
     category: "Web Development",
-    industry: "Healthcare",
     description:
-      "Telemedicine platform connecting patients with healthcare providers",
-    image: "https://placehold.co/600x400?text=No+Image",
-    technologies: ["Next.js", "TypeScript", "WebRTC", "AWS"],
+      "Comprehensive property management platform that streamlines operations and enhances user experience.",
+    image: "/images/portfolio/mutualproperty.webp",
+    technologies: ["React", "Laravel", "MySQL", "AWS"],
     metrics: {
-      consultations: "25K+",
-      satisfaction: "95%",
-      uptime: "99.9%",
+      efficiency: "+40%",
+      processing: "-60%",
+      users: "500+",
     },
-    year: "2023",
-    duration: "5 months",
-    teamSize: "10 developers",
-    slug: "healthcare-platform",
-  },
-  {
-    id: "ecommerce-website",
-    title: "StyleHub E-commerce",
-    category: "Web Development",
-    industry: "Fashion",
-    description:
-      "High-performance e-commerce platform with AI-powered recommendations",
-    image: "https://placehold.co/600x400?text=No+Image",
-    technologies: ["Next.js", "Shopify", "AI/ML", "Vercel"],
-    metrics: {
-      conversion: "35%",
-      pageSpeed: "95/100",
-      revenue: "+150%",
-    },
-    year: "2023",
     duration: "3 months",
-    teamSize: "5 developers",
-    slug: "ecommerce-website",
+    client: "Mutual Property",
+    industry: "Real Estate",
+    teamSize: "2 Members",
+    year: "2024",
   },
   {
-    id: "logistics-dashboard",
-    title: "LogiTrack Dashboard",
+    id: "yanks-and-brits",
+    previewLink: "https://system.yanksandbrits.co.id",
+    title: "EduTech Management System",
     category: "ERP Development",
-    industry: "Logistics",
-    description: "Real-time logistics management and tracking system",
-    image: "https://placehold.co/600x400?text=No+Image",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+    description:
+      "Innovative platform for managing educational institutions, enhancing communication between students, teachers, and parents.",
+    image: "/images/portfolio/yanks.webp",
+    technologies: ["NextJS", "React", "PostgreSQL", "Vercel"],
     metrics: {
-      efficiency: "45%",
-      accuracy: "99.5%",
-      savings: "$1.5M",
+      downloads: "50K+",
+      rating: "4.8★",
+      transactions: "$2M+",
     },
+    duration: "2 months",
+    client: "Yanks & Brits",
+    industry: "Education",
+    teamSize: "3 Members",
     year: "2023",
-    duration: "7 months",
-    teamSize: "12 developers",
-    slug: "logistics-dashboard",
   },
   {
-    id: "restaurant-app",
-    title: "FoodieOrder App",
-    category: "Mobile Development",
-    industry: "F&B",
-    description: "Multi-restaurant ordering and delivery management system",
-    image: "https://placehold.co/600x400?text=No+Image",
-    technologies: ["Flutter", "Firebase", "Stripe", "Google Maps"],
+    id: "7a",
+    previewLink: "https://www.7anugrah.com/",
+    title: "Web Application",
+    category: "Web Development",
+    description:
+      "HIPAA-compliant platform serving 10K+ patients with telemedicine and appointment management features.",
+    image: "/images/portfolio/7a.webp",
+    technologies: ["NextJS", "React", "PostgreSQL", "Vercel"],
     metrics: {
-      orders: "100K+",
-      restaurants: "500+",
-      growth: "+200%",
+      patients: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
     },
-    year: "2023",
-    duration: "4 months",
-    teamSize: "7 developers",
-    slug: "restaurant-app",
+    duration: "2 Weeks",
+    client: "7AA",
+    industry: "Logistics",
+    teamSize: "1 Members",
+    year: "2024",
+  },
+  {
+    id: "ansama",
+    previewLink: "https://ansama.co.id",
+    title: "Landing Page",
+    category: "Web Development",
+    description: "A modern landing page for showcasing products and services.",
+    image: "/images/portfolio/ansama.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      patients: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
+    },
+    duration: "1 Weeks",
+    client: "Ansama",
+    industry: "Logistics",
+    teamSize: "1 Members",
+    year: "2024",
+  },
+  {
+    id: "skyview",
+    previewLink: "https://www.skyview.co.id/",
+    title: "Landing Page",
+    category: "Web Development",
+    description: "Landing page for showcasing products and services.",
+    image: "/images/portfolio/skyview.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      patients: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
+    },
+    duration: "1 Weeks",
+    client: "Skyview Setiabudi Apartment",
+    industry: "Real Estate",
+    teamSize: "2 Members",
+    year: "2024",
+  },
+  {
+    id: "sugarbaby",
+    previewLink: "https://sugarbaby-id.vercel.app/",
+    title: "Landing Page",
+    category: "Web Development",
+    description: "Landing page for showcasing products and services.",
+    image: "/images/portfolio/sugarbaby.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      patients: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
+    },
+    duration: "1 Weeks",
+    client: "Sugarbaby",
+    industry: "F&B",
+    teamSize: "2 Members",
+    year: "2024",
+  },
+  {
+    id: "velure",
+    previewLink: "https://www.velureperfume.store",
+    title: "Landing Page",
+    category: "Web Development",
+    description: "Landing page for showcasing products and services.",
+    image: "/images/portfolio/velure.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      patients: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
+    },
+    duration: "1 Weeks",
+    client: "Velure Perfumes",
+    industry: "Beauty",
+    teamSize: "2 Members",
+    year: "2024",
+  },
+  {
+    id: "xfl",
+    previewLink: "https://www.xfl123.id",
+    title: "Landing Page",
+    category: "Web Development",
+    description: "Landing page for showcasing products and services.",
+    image: "/images/portfolio/xfl123.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      patients: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
+    },
+    duration: "1 Weeks",
+    client: "XFL",
+    industry: "Sport",
+    teamSize: "2 Members",
+    year: "2025",
   },
 ];
 
@@ -139,25 +198,25 @@ const categories = [
 ];
 const industries = [
   "All",
-  "Retail",
-  "Fintech",
-  "Healthcare",
-  "Fashion",
-  "Logistics",
   "F&B",
+  "Real Estate",
+  "Logistic",
+  "Education",
+  "Sport",
+  "Beauty",
 ];
 
 const PortfolioGallerySection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedIndustry, setSelectedIndustry] = useState("All");
   const [selectedProject, setSelectedProject] = useState<
-    (typeof projects)[0] | null
+    (typeof portfolioProjects)[0] | null
   >(null);
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const filteredProjects = projects.filter((project) => {
+  const filteredProjects = portfolioProjects.filter((project) => {
     const categoryMatch =
       selectedCategory === "All" || project.category === selectedCategory;
     const industryMatch =
@@ -243,13 +302,15 @@ const PortfolioGallerySection = () => {
                       "https://placehold.co/500x300?text=No+Image"
                     }
                     alt={project.title}
-                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-[268px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     width={500}
                     height={300}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="absolute top-4 right-4">
-                    <Badge variant="secondary">{project.category}</Badge>
+                    <Badge className="bg-primary/90 text-primary-foreground">
+                      {project.category}
+                    </Badge>
                   </div>
                   <div className="absolute right-4 bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="flex space-x-2">
@@ -261,7 +322,7 @@ const PortfolioGallerySection = () => {
                             onClick={() => setSelectedProject(project)}
                             className="flex-1"
                           >
-                            <ExternalLink className="mr-2 h-4 w-4" />
+                            <Eye className="mr-2 h-4 w-4" />
                             Quick View
                           </Button>
                         </DialogTrigger>
@@ -281,7 +342,7 @@ const PortfolioGallerySection = () => {
                                       "https://placehold.co/500x300?text=No+Image"
                                     }
                                     alt={selectedProject.title}
-                                    className="h-64 w-full rounded-lg object-cover"
+                                    className="h-[268px] w-full rounded-lg object-cover"
                                     width={500}
                                     height={300}
                                   />
@@ -324,11 +385,9 @@ const PortfolioGallerySection = () => {
                                     ))}
                                   </div>
                                   <Button asChild className="mt-4 w-full">
-                                    <Link
-                                      href={`/case-studies/${selectedProject.slug}`}
-                                    >
-                                      View Full Case Study
-                                      <ArrowRight className="ml-2 h-4 w-4" />
+                                    <Link href={selectedProject.previewLink}>
+                                      Visit Website
+                                      <ExternalLink className="ml-2 h-4 w-4" />
                                     </Link>
                                   </Button>
                                 </div>
@@ -341,7 +400,7 @@ const PortfolioGallerySection = () => {
                   </div>
                 </div>
 
-                <CardContent className="p-6">
+                <CardContent className="px-6 pb-6">
                   <div className="mb-2 flex items-center justify-between">
                     <Badge variant="outline" className="text-xs">
                       {project.industry}
@@ -372,12 +431,16 @@ const PortfolioGallerySection = () => {
 
                   <Button
                     asChild
-                    variant="ghost"
-                    className="group/btn mt-4 w-full"
+                    variant="outline"
+                    className="hover:bg-primary mt-4 w-full"
                   >
-                    <Link href={`/case-studies/${project.slug}`}>
-                      View Case Study
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    <Link
+                      href={project.previewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit Website
+                      <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </CardContent>
