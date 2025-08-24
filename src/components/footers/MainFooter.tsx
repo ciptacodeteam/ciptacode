@@ -143,7 +143,7 @@ const MainFooter = () => {
                 href="/contact"
                 className="text-primary text-base font-extrabold"
               >
-                +62 812-3456-7890
+                +62 853-6002-7891
               </Link>
             </div>
             <div className="text-muted-foreground text-sm">
