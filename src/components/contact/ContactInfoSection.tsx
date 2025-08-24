@@ -30,7 +30,7 @@ const contactDetails: ContactDetail[] = [
   {
     icon: Phone,
     title: "Call Us",
-    primary: "+62 812-3456-7890",
+    primary: "+62 853-6002-7891",
     // secondary: "+1 (555) 987-6543",
     description: "Mon-Fri, 9AM-6PM PST",
     action: "Call Now",
