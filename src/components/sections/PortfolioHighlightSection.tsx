@@ -1,75 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import {
-  ArrowRight,
-  ExternalLink,
-  Calendar,
-  Users,
-  TrendingUp,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion, useInView } from "framer-motion";
+import { Calendar, ExternalLink, Eye, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
-
-const portfolioProjects = [
-  {
-    id: "retailflow-erp",
-    title: "RetailFlow ERP System",
-    category: "Enterprise Software",
-    description:
-      "Complete ERP solution that increased operational efficiency by 40% and reduced processing time by 60%.",
-    image: "/images/modern-erp-dashboard.png",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
-    metrics: {
-      efficiency: "+40%",
-      processing: "-60%",
-      users: "500+",
-    },
-    timeline: "6 months",
-    client: "RetailFlow Corp",
-  },
-  {
-    id: "fintech-mobile",
-    title: "FinTech Mobile App",
-    category: "Mobile Application",
-    description:
-      "Secure financial app with 50K+ downloads and 4.8 App Store rating, featuring advanced security protocols.",
-    image: "/images/fintech-mobile-app.png",
-    technologies: ["React Native", "Node.js", "MongoDB", "Stripe"],
-    metrics: {
-      downloads: "50K+",
-      rating: "4.8★",
-      transactions: "$2M+",
-    },
-    timeline: "4 months",
-    client: "FinSecure Inc",
-  },
-  {
-    id: "healthcare-platform",
-    title: "Healthcare Management Platform",
-    category: "Healthcare Tech",
-    description:
-      "HIPAA-compliant platform serving 10K+ patients with telemedicine and appointment management features.",
-    image: "/images/healthcare-management-dashboard.png",
-    technologies: ["Next.js", "Python", "PostgreSQL", "Docker"],
-    metrics: {
-      patients: "10K+",
-      satisfaction: "95%",
-      efficiency: "+35%",
-    },
-    timeline: "8 months",
-    client: "MedCare Solutions",
-  },
-];
+import Link from "next/link";
+import { useRef, useState } from "react";
+import { portfolioProjects } from "../portfolio/PortfolioGallerySection";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
 
 const PortfolioHighlightSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof portfolioProjects)[0] | null
+  >(null);
 
   return (
     <section ref={ref} className="bg-background py-24">
@@ -97,7 +51,7 @@ const PortfolioHighlightSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {portfolioProjects.map((project, index) => (
+          {portfolioProjects.slice(0, 3).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -111,12 +65,12 @@ const PortfolioHighlightSection = () => {
                   <Image
                     src={project.image || "https://placehold.co/600x400"}
                     alt={project.title}
-                    className="h-62 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-[268px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     width={600}
                     height={400}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <Badge className="bg-primary/90 text-primary-foreground absolute top-4 left-4">
+                  <Badge className="bg-primary/90 text-primary-foreground absolute top-4 right-4">
                     {project.category}
                   </Badge>
                 </div>
@@ -124,7 +78,7 @@ const PortfolioHighlightSection = () => {
                 <CardContent className="px-6 pb-6">
                   <div className="text-muted-foreground mb-2 flex items-center gap-2 text-sm">
                     <Calendar className="h-4 w-4" />
-                    {project.timeline}
+                    {project.duration}
                     <span className="mx-2">•</span>
                     <Users className="h-4 w-4" />
                     {project.client}
@@ -170,12 +124,86 @@ const PortfolioHighlightSection = () => {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button asChild size="sm" className="flex-1">
-                      <Link href={`/case-studies/${project.id}`}>
-                        View Case Study
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          size="sm"
+                          onClick={() => setSelectedProject(project)}
+                          className="flex-1"
+                        >
+                          <Eye className="mr-2 h-4 w-4" />
+                          Quick View
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
+                        {selectedProject && (
+                          <>
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl">
+                                {selectedProject.title}
+                              </DialogTitle>
+                            </DialogHeader>
+                            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                              <div>
+                                <Image
+                                  src={
+                                    selectedProject.image ||
+                                    "https://placehold.co/500x300?text=No+Image"
+                                  }
+                                  alt={selectedProject.title}
+                                  className="h-[268px] w-full rounded-lg object-cover"
+                                  width={500}
+                                  height={300}
+                                />
+                              </div>
+                              <div className="space-y-4">
+                                <p className="text-muted-foreground">
+                                  {selectedProject.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                  {selectedProject.technologies.map((tech) => (
+                                    <Badge key={tech} variant="outline">
+                                      {tech}
+                                    </Badge>
+                                  ))}
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                  <div className="flex items-center space-x-2 text-sm">
+                                    <Calendar className="text-muted-foreground h-4 w-4" />
+                                    <span>{selectedProject.duration}</span>
+                                  </div>
+                                  <div className="flex items-center space-x-2 text-sm">
+                                    <Users className="text-muted-foreground h-4 w-4" />
+                                    <span>{selectedProject.teamSize}</span>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-4 border-t pt-4">
+                                  {Object.entries(selectedProject.metrics).map(
+                                    ([key, value]) => (
+                                      <div key={key} className="text-center">
+                                        <div className="text-primary text-lg font-bold">
+                                          {value}
+                                        </div>
+                                        <div className="text-muted-foreground text-xs capitalize">
+                                          {key.replace(/([A-Z])/g, " $1")}
+                                        </div>
+                                      </div>
+                                    ),
+                                  )}
+                                </div>
+                                <Button asChild className="mt-4 w-full">
+                                  <Link href={selectedProject.previewLink}>
+                                    Visit Website
+                                    <ExternalLink className="ml-2 h-4 w-4" />
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </DialogContent>
+                    </Dialog>
+
                     <Button variant="outline" size="sm">
                       <ExternalLink className="h-4 w-4" />
                     </Button>
@@ -196,7 +224,7 @@ const PortfolioHighlightSection = () => {
             asChild
             size="lg"
             variant="outline"
-            className="group bg-transparent"
+            className="group hover:bg-primary bg-transparent"
           >
             <Link href="/portfolio">
               View All Projects

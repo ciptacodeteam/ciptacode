@@ -307,7 +307,7 @@ const ServiceHighlightSection = () => {
             </div>
             <div className="flex items-center">
               <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
-              Launch in 4-8 weeks
+              Launch in 1-2 weeks
             </div>
           </div>
         </motion.div>
