@@ -59,7 +59,7 @@ const ClientMarqueeSection = () => {
                 src={client.image}
                 alt={client.name}
                 className="h-12 w-42 px-8 transition duration-300 ease-in-out sm:h-12"
-                width={150}
+                width={168}
                 height={48}
               />
             ))}
