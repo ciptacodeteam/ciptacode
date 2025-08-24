@@ -49,7 +49,7 @@ const clients: Client[] = [
 
 const ClientMarqueeSection = () => {
   return (
-    <section className="bg-black py-6">
+    <section className="bg-black py-4 lg:py-6">
       <div className="mx-auto">
         <div className="relative overflow-hidden">
           <Marquee autoFill speed={50}>
@@ -58,9 +58,9 @@ const ClientMarqueeSection = () => {
                 key={`${client.name}-${i}`}
                 src={client.image}
                 alt={client.name}
-                className="h-12 w-42 px-8 transition duration-300 ease-in-out sm:h-12"
-                width={168}
-                height={48}
+                className="h-auto w-24 object-contain px-4 transition duration-300 ease-in-out sm:h-12 md:w-42 lg:w-42 lg:px-8"
+                width={300}
+                height={300}
               />
             ))}
           </Marquee>
