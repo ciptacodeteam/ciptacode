@@ -15,6 +15,7 @@ import { Calendar, ExternalLink, Eye, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type Project = {
   id: string;
@@ -312,7 +313,7 @@ const PortfolioGallerySection = () => {
                       {project.category}
                     </Badge>
                   </div>
-                  <div className="absolute right-4 bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {/* <div className="absolute right-4 bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="flex space-x-2">
                       <Dialog>
                         <DialogTrigger asChild>
@@ -397,7 +398,7 @@ const PortfolioGallerySection = () => {
                         </DialogContent>
                       </Dialog>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <CardContent className="px-6 pb-6">
@@ -429,20 +430,102 @@ const PortfolioGallerySection = () => {
                     )}
                   </div>
 
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="hover:bg-primary mt-4 w-full"
-                  >
-                    <Link
-                      href={project.previewLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit Website
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex gap-2">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          size="sm"
+                          onClick={() => setSelectedProject(project)}
+                          className="flex-1"
+                        >
+                          <Eye className="mr-2 h-4 w-4" />
+                          Quick View
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
+                        {selectedProject && (
+                          <>
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl">
+                                {selectedProject.title}
+                              </DialogTitle>
+                            </DialogHeader>
+                            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                              <div>
+                                <Image
+                                  src={
+                                    selectedProject.image ||
+                                    "https://placehold.co/500x300?text=No+Image"
+                                  }
+                                  alt={selectedProject.title}
+                                  className="h-[268px] w-full rounded-lg object-cover"
+                                  width={500}
+                                  height={300}
+                                />
+                              </div>
+                              <div className="space-y-4">
+                                <p className="text-muted-foreground">
+                                  {selectedProject.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                  {selectedProject.technologies.map((tech) => (
+                                    <Badge key={tech} variant="outline">
+                                      {tech}
+                                    </Badge>
+                                  ))}
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                  <div className="flex items-center space-x-2 text-sm">
+                                    <Calendar className="text-muted-foreground h-4 w-4" />
+                                    <span>{selectedProject.duration}</span>
+                                  </div>
+                                  <div className="flex items-center space-x-2 text-sm">
+                                    <Users className="text-muted-foreground h-4 w-4" />
+                                    <span>{selectedProject.teamSize}</span>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-4 border-t pt-4">
+                                  {Object.entries(selectedProject.metrics).map(
+                                    ([key, value]) => (
+                                      <div key={key} className="text-center">
+                                        <div className="text-primary text-lg font-bold">
+                                          {value}
+                                        </div>
+                                        <div className="text-muted-foreground text-xs capitalize">
+                                          {key.replace(/([A-Z])/g, " $1")}
+                                        </div>
+                                      </div>
+                                    ),
+                                  )}
+                                </div>
+                                <Button asChild className="mt-4 w-full">
+                                  <Link href={selectedProject.previewLink}>
+                                    Visit Website
+                                    <ExternalLink className="ml-2 h-4 w-4" />
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </DialogContent>
+                    </Dialog>
+
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="hover:bg-primary"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Live Preview</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
