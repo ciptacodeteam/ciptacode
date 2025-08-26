@@ -15,6 +15,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { PHONE_NUMBER } from "@/lib/constant";
+import { sendWhatsappMessage } from "@/lib/utils";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import {
   ArrowLeft,
@@ -25,8 +27,6 @@ import {
   Globe,
   Send,
   Smartphone,
-  Upload,
-  X,
   Zap,
 } from "lucide-react";
 import type React from "react";
@@ -48,21 +48,26 @@ interface FormData {
 }
 
 const projectTypes = [
-  { id: "website", name: "Website Development", icon: Globe, basePrice: 5000 },
-  { id: "mobile", name: "Mobile App", icon: Smartphone, basePrice: 15000 },
-  { id: "erp", name: "ERP System", icon: Database, basePrice: 25000 },
-  { id: "custom", name: "Custom Solution", icon: Zap, basePrice: 10000 },
+  {
+    id: "website",
+    name: "Website Development",
+    icon: Globe,
+    basePrice: 4499000,
+  },
+  { id: "mobile", name: "Mobile App", icon: Smartphone, basePrice: 5899000 },
+  { id: "erp", name: "ERP System", icon: Database, basePrice: 14499000 },
+  { id: "custom", name: "Custom Solution", icon: Zap, basePrice: -1 },
 ];
 
 const services = [
-  { id: "ui-design", name: "UI/UX Design", price: 2000 },
-  { id: "frontend", name: "Frontend Development", price: 3000 },
-  { id: "backend", name: "Backend Development", price: 4000 },
-  { id: "database", name: "Database Design", price: 2500 },
-  { id: "api", name: "API Integration", price: 1500 },
-  { id: "testing", name: "Quality Assurance", price: 1000 },
-  { id: "deployment", name: "Deployment & Hosting", price: 800 },
-  { id: "maintenance", name: "Maintenance & Support", price: 500 },
+  { id: "ui-design", name: "UI/UX Design", price: 0 },
+  { id: "frontend", name: "Frontend Development", price: 0 },
+  { id: "backend", name: "Backend Development", price: 0 },
+  { id: "database", name: "Database Design", price: 0 },
+  { id: "api", name: "API Integration", price: 2200000 },
+  { id: "testing", name: "Quality Assurance", price: 0 },
+  { id: "deployment", name: "Deployment & Hosting", price: 700000 },
+  { id: "maintenance", name: "Maintenance & Support", price: 500000 },
 ];
 
 const ContactFormSection = () => {
@@ -119,7 +124,7 @@ const ContactFormSection = () => {
         }
         break;
       case "phone":
-        if (value && !/^\+?[\d\s-()]+$/.test(value)) {
+        if (value && !/^\+?[\d\s-()]+/.test(value)) {
           newErrors.phone = "Please enter a valid phone number";
         } else {
           delete newErrors.phone;
@@ -151,17 +156,17 @@ const ContactFormSection = () => {
     }));
   };
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files ?? []);
-    setFormData((prev) => ({ ...prev, files: [...prev.files, ...files] }));
-  };
+  // const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const files = Array.from(e.target.files ?? []);
+  //   setFormData((prev) => ({ ...prev, files: [...prev.files, ...files] }));
+  // };
 
-  const removeFile = (index: number) => {
-    setFormData((prev) => ({
-      ...prev,
-      files: prev.files.filter((_, i) => i !== index),
-    }));
-  };
+  // const removeFile = (index: number) => {
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     files: prev.files.filter((_, i) => i !== index),
+  //   }));
+  // };
 
   const nextStep = () => {
     if (currentStep < totalSteps) {
@@ -175,12 +180,48 @@ const ContactFormSection = () => {
     }
   };
 
+  useEffect(() => {
+    // Auto-check free services
+    const freeServiceIds = services
+      .filter((s) => s.price === 0)
+      .map((s) => s.id);
+    setFormData((prev) => ({
+      ...prev,
+      services: Array.from(new Set([...prev.services, ...freeServiceIds])),
+    }));
+    // Only run once on mount
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // send all to whatsapp with text
+    // Helper to format budget range
+    const budgetMap: Record<string, string> = {
+      "under-2k": "Rp 0 - Rp 2.000.000",
+      "2k-5k": "Rp 2.000.000 - Rp 5.000.000",
+      "5k-10k": "Rp 5.000.000 - Rp 10.000.000",
+      "10k-50k": "Rp 10.000.000 - Rp 50.000.000",
+      "over-50k": "Rp 50.000.000+",
+    };
+    const formattedBudget = budgetMap[formData.budget] ?? "-";
+
+    const whatsappMessage =
+      `Permintaan penawaran baru dari ${formData.name} (${formData.email}, ${formData.phone}):\n\n` +
+      `Jenis Proyek: ${formData.projectType}\n` +
+      `Layanan: ${formData.services.join(", ")}\n` +
+      `Anggaran: ${formattedBudget}\n` +
+      `Timeline: ${formData.timeline}\n` +
+      `Deskripsi Proyek: ${formData.message}\n` +
+      `Estimasi Harga: Rp ${estimatedPrice.toLocaleString()}\n` +
+      `Preferensi Kontak: ${formData.contactPreference}\n\n` +
+      "Penutup: Terima kasih telah menghubungi kami!";
+
+    sendWhatsappMessage(PHONE_NUMBER, whatsappMessage);
 
     setIsLoading(false);
     setIsSubmitted(true);
@@ -215,7 +256,7 @@ const ContactFormSection = () => {
                 <div className="bg-muted/50 mb-6 rounded-lg p-4">
                   <p className="text-sm font-medium">Estimated Project Value</p>
                   <p className="text-primary text-2xl font-bold">
-                    ${estimatedPrice.toLocaleString()}
+                    Rp {estimatedPrice.toLocaleString()}
                   </p>
                   <p className="text-muted-foreground text-xs">
                     *Final quote may vary based on detailed requirements
@@ -299,7 +340,7 @@ const ContactFormSection = () => {
                     <span className="text-sm font-medium">Live Estimate</span>
                   </div>
                   <p className="text-primary text-2xl font-bold">
-                    ${estimatedPrice.toLocaleString()}
+                    Rp {estimatedPrice.toLocaleString()}
                   </p>
                   <p className="text-muted-foreground text-xs">
                     *Estimate updates as you make selections
@@ -376,7 +417,7 @@ const ContactFormSection = () => {
                             onChange={(e) =>
                               handleInputChange("phone", e.target.value)
                             }
-                            placeholder="+1 (555) 123-4567"
+                            placeholder="+62 812-3456-7890"
                             className={errors.phone ? "border-red-500" : ""}
                           />
                           {errors.phone && (
@@ -409,11 +450,7 @@ const ContactFormSection = () => {
                                 key={type.id}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className={`cursor-pointer rounded-lg border-2 p-4 transition-all ${
-                                  formData.projectType === type.id
-                                    ? "border-primary bg-primary/5"
-                                    : "border-muted hover:border-primary/50"
-                                }`}
+                                className={`Rp { formData.projectType === type.id ? "border-primary bg-primary/5" : "border-muted hover:border-primary/50" } cursor-pointer rounded-lg border-2 p-4 transition-all`}
                                 onClick={() =>
                                   handleInputChange("projectType", type.id)
                                 }
@@ -422,10 +459,16 @@ const ContactFormSection = () => {
                                   <Icon className="text-primary h-6 w-6" />
                                   <div>
                                     <p className="font-medium">{type.name}</p>
-                                    <p className="text-muted-foreground text-sm">
-                                      Starting from $
-                                      {type.basePrice.toLocaleString()}
-                                    </p>
+                                    {type.basePrice > 0 ? (
+                                      <p className="text-muted-foreground text-sm">
+                                        Starting from Rp
+                                        {type.basePrice.toLocaleString()}
+                                      </p>
+                                    ) : (
+                                      <p className="text-muted-foreground text-sm">
+                                        Custom pricing available
+                                      </p>
+                                    )}
                                   </div>
                                 </div>
                               </motion.div>
@@ -468,9 +511,15 @@ const ContactFormSection = () => {
                                 <span className="font-medium">
                                   {service.name}
                                 </span>
-                                <span className="text-muted-foreground ml-2 text-sm">
-                                  +${service.price.toLocaleString()}
-                                </span>
+                                {service.price > 0 ? (
+                                  <span className="text-muted-foreground ml-2 text-sm">
+                                    +Rp {service.price.toLocaleString()}
+                                  </span>
+                                ) : (
+                                  <span className="ml-2 text-sm text-green-500">
+                                    Free
+                                  </span>
+                                )}
                               </Label>
                             </div>
                           ))}
@@ -490,20 +539,20 @@ const ContactFormSection = () => {
                               <SelectValue placeholder="Select budget range" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="under-10k">
-                                Under $10,000
+                              <SelectItem value="under-2k">
+                                Under Rp 2.000.000
                               </SelectItem>
-                              <SelectItem value="10k-25k">
-                                $10,000 - $25,000
+                              <SelectItem value="2k-5k">
+                                Rp 2.000.000 - Rp 5.000.000
                               </SelectItem>
-                              <SelectItem value="25k-50k">
-                                $25,000 - $50,000
+                              <SelectItem value="5k-10k">
+                                Rp 5.000.000 - Rp 10.000.000
                               </SelectItem>
-                              <SelectItem value="50k-100k">
-                                $50,000 - $100,000
+                              <SelectItem value="10k-50k">
+                                Rp 10.000.000 - Rp 50.000.000
                               </SelectItem>
-                              <SelectItem value="over-100k">
-                                Over $100,000
+                              <SelectItem value="over-50k">
+                                Over Rp 50.000.000
                               </SelectItem>
                             </SelectContent>
                           </Select>
@@ -564,7 +613,7 @@ const ContactFormSection = () => {
                         </p>
                       </div>
 
-                      <div className="space-y-2">
+                      {/* <div className="space-y-2">
                         <Label>Upload Project Files (Optional)</Label>
                         <div className="border-muted rounded-lg border-2 border-dashed p-6 text-center">
                           <Upload className="text-muted-foreground mx-auto mb-2 h-8 w-8" />
@@ -613,7 +662,7 @@ const ContactFormSection = () => {
                             ))}
                           </div>
                         )}
-                      </div>
+                      </div> */}
 
                       <div className="space-y-2">
                         <Label>Preferred Contact Method</Label>
@@ -629,7 +678,6 @@ const ContactFormSection = () => {
                           <SelectContent>
                             <SelectItem value="email">Email</SelectItem>
                             <SelectItem value="phone">Phone Call</SelectItem>
-                            <SelectItem value="video">Video Call</SelectItem>
                             <SelectItem value="meeting">
                               In-Person Meeting
                             </SelectItem>

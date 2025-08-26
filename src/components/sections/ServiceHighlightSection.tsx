@@ -62,7 +62,7 @@ const services = [
     cta: "Schedule ERP Demo",
     testimonial: "Cut our processing time in half and eliminated manual errors",
     clientName: "Mike Rodriguez, Operations Director",
-    startingPrice: "Starting at Rp 12.499.000",
+    startingPrice: "Starting at Rp 14.499.000",
   },
   {
     icon: Smartphone,
