@@ -39,7 +39,7 @@ const services = [
     cta: "Get Website Quote",
     testimonial: "Our new website generated 40% more leads in the first month",
     clientName: "Sarah Chen, CEO TechStart",
-    startingPrice: "Starting at Rp 2.499.000",
+    startingPrice: "Starting at Rp 4.499.000",
   },
   {
     icon: Database,
@@ -62,7 +62,7 @@ const services = [
     cta: "Schedule ERP Demo",
     testimonial: "Cut our processing time in half and eliminated manual errors",
     clientName: "Mike Rodriguez, Operations Director",
-    startingPrice: "Starting at Rp 9.499.000",
+    startingPrice: "Starting at Rp 12.499.000",
   },
   {
     icon: Smartphone,
@@ -85,7 +85,7 @@ const services = [
     cta: "Start App Project",
     testimonial: "Our app hit 10k downloads in the first week with 4.9 stars",
     clientName: "Lisa Park, Product Manager",
-    startingPrice: "Starting at Rp 2.899.000",
+    startingPrice: "Starting at Rp 5.899.000",
   },
 ];
 

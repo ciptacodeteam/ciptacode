@@ -17,7 +17,19 @@ import {
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-const services = {
+type Service = {
+  icon: React.ElementType;
+  title: string;
+  subtitle: string;
+  pain: string;
+  solution: string;
+  deliverables: string[];
+  stack: string[];
+  timeline: string;
+  startingPrice: string;
+};
+
+export const services: Record<string, Service> = {
   website: {
     icon: Globe,
     title: "Website Development",
@@ -42,7 +54,7 @@ const services = {
       "Sanity CMS",
     ],
     timeline: "4-8 weeks",
-    startingPrice: "$5,000",
+    startingPrice: "Rp 4.499.000",
   },
   erp: {
     icon: Database,
@@ -61,7 +73,7 @@ const services = {
     ],
     stack: ["Node.js", "React", "PostgreSQL", "Redis", "Docker", "AWS"],
     timeline: "12-24 weeks",
-    startingPrice: "$25,000",
+    startingPrice: "Rp 12.499.000",
   },
   apps: {
     icon: Smartphone,
@@ -87,7 +99,7 @@ const services = {
       "TypeScript",
     ],
     timeline: "8-16 weeks",
-    startingPrice: "$15,000",
+    startingPrice: "Rp 5.899.000",
   },
 };
 
