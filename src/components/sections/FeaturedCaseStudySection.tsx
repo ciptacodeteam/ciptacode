@@ -46,18 +46,20 @@ const FeaturedCaseStudySection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Image placeholder */}
               <div className="from-primary/20 to-accent/20 relative flex h-64 cursor-pointer items-center justify-center rounded bg-gradient-to-br lg:h-auto">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-center"
-                >
-                  <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/20">
-                    <ExternalLink className="h-12 w-12 text-white" />
-                  </div>
-                  <p className="font-medium text-white/80">
-                    RetailFlow ERP System
-                  </p>
-                </motion.div>
+                <Link href="/portfolio">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-center"
+                  >
+                    <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/20">
+                      <ExternalLink className="h-12 w-12 text-white" />
+                    </div>
+                    <p className="font-medium text-white/80">
+                      Transforming Retail with Technology
+                    </p>
+                  </motion.div>
+                </Link>
               </div>
 
               {/* Content */}
@@ -98,7 +100,7 @@ const FeaturedCaseStudySection = () => {
                   </div>
                   <div>
                     <div className="text-primary mb-1 text-2xl font-bold">
-                      $2M+
+                      124 juta
                     </div>
                     <div className="text-muted-foreground text-sm">
                       Cost Savings
@@ -113,7 +115,7 @@ const FeaturedCaseStudySection = () => {
                 </div>
 
                 <Button asChild className="group">
-                  <Link href="/case-studies/retailflow">
+                  <Link href="/portfolio">
                     View Full Case Study
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
