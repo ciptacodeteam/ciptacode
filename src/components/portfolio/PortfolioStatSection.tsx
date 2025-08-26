@@ -33,10 +33,10 @@ function AnimatedNumber({
 }
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Completed" },
-  { value: 25, suffix: "+", label: "Happy Clients" },
-  { value: 15, suffix: "+", label: "Industries Served" },
-  { value: 99, suffix: "%", label: "Success Rate" },
+  { value: 100, suffix: "+", label: "Projects Delivered" },
+  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 95, suffix: "+", label: "Happy Clients" },
+  { value: 24, suffix: "/5", label: "Support Available" },
 ];
 
 const PortfolioStatSection = () => {
