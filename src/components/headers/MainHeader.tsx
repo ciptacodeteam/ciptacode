@@ -1,8 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { PHONE_NUMBER } from "@/lib/constant";
+import { cn, sendWhatsappMessage } from "@/lib/utils";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import BrandLogo from "../logos/BrandLogo";
 import NavList from "../navigations/NavList";
@@ -21,6 +21,12 @@ const MainHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleWhatsapp = () => {
+    const message =
+      "Halo, saya ingin menanyakan tentang layanan Anda yang tersedia pada website ciptacode.id.";
+    sendWhatsappMessage(PHONE_NUMBER, message);
+  };
+
   return (
     <header className={cn("fixed top-0 right-0 left-0 z-40 mx-auto w-full")}>
       <nav
@@ -36,11 +42,9 @@ const MainHeader = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button asChild className="hidden md:flex">
-              <Link href="/" className="flex-center gap-2">
-                <IconBrandWhatsapp />
-                Contact Us
-              </Link>
+            <Button className="hidden md:flex" onClick={handleWhatsapp}>
+              <IconBrandWhatsapp />
+              Contact Us
             </Button>
 
             <SidebarMobile />

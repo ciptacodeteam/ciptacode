@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "@/lib/constant";
+import { cn, sendEmailMessage, sendWhatsappMessage } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { Check, Copy, Mail, Phone } from "lucide-react";
 import { useRef, useState } from "react";
@@ -13,7 +14,8 @@ type ContactDetail = {
   primary: string;
   secondary?: string;
   description: string;
-  action: string;
+  actionText: string;
+  action?: () => void;
   color: string;
 };
 
@@ -24,7 +26,14 @@ const contactDetails: ContactDetail[] = [
     primary: "ciptaprojects@gmail.com",
     // secondary: "support@ciptacode.com",
     description: "Get a response within 2 hours",
-    action: "Send Email",
+    actionText: "Send Email",
+    action: () => {
+      sendEmailMessage(
+        EMAIL_ADDRESS,
+        "Permintaan Informasi Layanan Anda",
+        "Halo, saya ingin menanyakan tentang layanan Anda yang tersedia pada website ciptacode.id.",
+      );
+    },
     color: "from-blue-500 to-blue-600",
   },
   {
@@ -33,7 +42,13 @@ const contactDetails: ContactDetail[] = [
     primary: "+62 853-6002-7891",
     // secondary: "+1 (555) 987-6543",
     description: "Mon-Fri, 9AM-6PM PST",
-    action: "Call Now",
+    actionText: "Call Now",
+    action: () => {
+      sendWhatsappMessage(
+        PHONE_NUMBER,
+        "Halo, saya ingin menanyakan tentang layanan Anda yang tersedia pada website ciptacode.id.",
+      );
+    },
     color: "from-green-500 to-green-600",
   },
   //   {
@@ -63,13 +78,13 @@ const ContactInfoSection = () => {
   const [copiedPhone, setCopiedPhone] = useState(false);
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText("hello@ciptacode.com");
+    await navigator.clipboard.writeText(EMAIL_ADDRESS);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
   const copyPhone = async () => {
-    await navigator.clipboard.writeText("+62 812-3456-7890");
+    await navigator.clipboard.writeText(PHONE_NUMBER);
     setCopiedPhone(true);
     setTimeout(() => setCopiedPhone(false), 2000);
   };
@@ -200,8 +215,9 @@ const ContactInfoSection = () => {
                             `mt-4 block bg-gradient-to-r font-semibold text-white transition-all duration-300 group-hover:scale-105 hover:shadow-lg sm:hidden md:block lg:hidden`,
                             detail.color,
                           )}
+                          onClick={detail.action}
                         >
-                          {detail.action}
+                          {detail.actionText}
                         </Button>
                       </div>
                     </div>
@@ -210,8 +226,9 @@ const ContactInfoSection = () => {
                         `hidden bg-gradient-to-r font-semibold text-white transition-all duration-300 group-hover:scale-105 hover:shadow-lg sm:block md:hidden lg:block`,
                         detail.color,
                       )}
+                      onClick={detail.action}
                     >
-                      {detail.action}
+                      {detail.actionText}
                     </Button>
                   </div>
                 </CardContent>

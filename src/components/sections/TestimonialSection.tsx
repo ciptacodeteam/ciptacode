@@ -39,88 +39,88 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Jonathan Yombo",
-    role: "Software Engineer",
+    name: "Andi Wijaya",
+    role: "Owner TokoKita",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
     quote:
-      "Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.",
+      "Ciptacode berhasil membuat website toko online kami dengan tampilan profesional dan fitur lengkap. Proses pengerjaan sangat cepat dan hasilnya melebihi ekspektasi.",
   },
   {
-    name: "Yves Kalume",
-    role: "GDE - Android",
-    image: "https://randomuser.me/api/portraits/men/6.jpg",
+    name: "Siti Rahmawati",
+    role: "Manager PT Solusi Digital",
+    image: "https://randomuser.me/api/portraits/women/2.jpg",
     quote:
-      "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to Tailus.",
+      "Tim Ciptacode sangat komunikatif dan responsif. Website perusahaan kami kini tampil modern dan mudah digunakan oleh klien.",
   },
   {
-    name: "Yucel Faruksahan",
-    role: "Tailkits Creator",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
+    name: "Budi Prasetyo",
+    role: "Founder RumahKopi",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
     quote:
-      "Great work on tailfolio template. This is one of the best personal website that I have seen so far :)",
+      "Pembuatan website bisnis kopi kami berjalan lancar. Fitur reservasi dan katalog produk sangat membantu meningkatkan penjualan.",
   },
   {
-    name: "Anonymous author",
-    role: "Doing something",
-    image: "https://randomuser.me/api/portraits/men/8.jpg",
+    name: "Dewi Lestari",
+    role: "Product Manager PT Mitra ERP",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
     quote:
-      "I am really new to Tailwind and I want to give a go to make some page on my own. I searched a lot of hero pages and blocks online. However, most of them are not giving me a clear view or needed some HTML/CSS coding background to make some changes from the original or too expensive to have. I downloaded the one of Tailus template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page.",
+      "ERP yang dikembangkan Ciptacode sangat memudahkan pengelolaan data perusahaan. Integrasi dengan website berjalan mulus.",
   },
   {
-    name: "Shekinah Tshiokufila",
-    role: "Senior Software Engineer",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-    quote:
-      "Tailus is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it. I can only recommend this incredible wonder.",
-  },
-  {
-    name: "Oketa Fred",
-    role: "Fullstack Developer",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    quote:
-      "I absolutely love Tailus! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze.",
-  },
-  {
-    name: "Zeki",
-    role: "Founder of ChatExtend",
+    name: "Rizky Saputra",
+    role: "CEO StartupEdu",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
     quote:
-      "Using TailsUI has been like unlocking a secret design superpower. It's the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly.",
+      "Website edukasi yang dibuat Ciptacode sangat interaktif dan user friendly. Timnya profesional dan selalu memberikan solusi terbaik.",
   },
   {
-    name: "Joseph Kitheka",
-    role: "Fullstack Developer",
+    name: "Fitri Handayani",
+    role: "Marketing PT Sukses Bersama",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    quote:
+      "Ciptacode membantu kami membuat landing page promosi yang menarik dan meningkatkan konversi penjualan secara signifikan.",
+  },
+  {
+    name: "Joko Santoso",
+    role: "Owner BengkelMobil",
+    image: "https://randomuser.me/api/portraits/men/7.jpg",
+    quote:
+      "Website bengkel kami kini mudah ditemukan di Google dan pelanggan bisa booking online. Terima kasih Ciptacode!",
+  },
+  {
+    name: "Maya Putri",
+    role: "COO PT Kreatif Media",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
+    quote:
+      "Aplikasi mobile dan website yang dibuat Ciptacode sangat membantu operasional harian perusahaan kami.",
+  },
+  {
+    name: "Fajar Nugroho",
+    role: "Founder EventPro",
     image: "https://randomuser.me/api/portraits/men/9.jpg",
     quote:
-      "Tailus has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow. The flexibility to customize every aspect allows me to create unique user experiences. Tailus is a game-changer for modern web development!",
+      "Website event management kami tampil modern dan fitur registrasi online sangat memudahkan peserta.",
   },
   {
-    name: "Khatab Wedaa",
-    role: "MerakiUI Creator",
+    name: "Dian Pratama",
+    role: "Owner Restoku",
     image: "https://randomuser.me/api/portraits/men/10.jpg",
     quote:
-      "Tailus is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project.",
+      "Ciptacode membuat website restoran kami dengan sistem pemesanan online yang sangat praktis dan mudah digunakan.",
   },
   {
-    name: "Rodrigo Aguilar",
-    role: "TailwindAwesome Creator",
+    name: "Agus Setiawan",
+    role: "IT Supervisor PT Amanah",
     image: "https://randomuser.me/api/portraits/men/11.jpg",
     quote:
-      "I love Tailus ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time.",
+      "Website internal perusahaan yang dikembangkan Ciptacode sangat membantu komunikasi dan kolaborasi tim.",
   },
   {
-    name: "Eric Ampire",
-    role: "Mobile Engineer at @BRPNews • @GoogleDevExpert for Android",
-    image: "https://randomuser.me/api/portraits/men/12.jpg",
+    name: "Lina Marlina",
+    role: "Owner KlinikSehat",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
     quote:
-      "Tailus templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience. The templates are easy to use, customizable, and responsive, and the support team is always available to help. I highly recommend Tailus templates to anyone who is looking to create a website.",
-  },
-  {
-    name: "Roland Tubonge",
-    role: "Software Engineer",
-    image: "https://randomuser.me/api/portraits/men/13.jpg",
-    quote:
-      "Tailus is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!",
+      "Website klinik kami kini memiliki fitur booking dan konsultasi online, sangat memudahkan pasien dan dokter.",
   },
 ];
 
