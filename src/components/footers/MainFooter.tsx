@@ -7,6 +7,14 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import BrandLogo from "../logos/BrandLogo";
+import {
+  EMAIL_ADDRESS,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  PHONE_NUMBER,
+  TIKTOK_URL,
+} from "@/lib/constant";
+import { getEmailUrl, getWhatsappMessageUrl } from "@/lib/utils";
 
 const MainFooter = () => {
   return (
@@ -22,36 +30,49 @@ const MainFooter = () => {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href={INSTAGRAM_URL}
                 className="text-muted-foreground hover:text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <IconBrandInstagram size={20} />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
-                href="#"
+                href={getWhatsappMessageUrl(
+                  PHONE_NUMBER,
+                  "Halo, saya ingin menanyakan tentang layanan Anda yang tersedia pada website ciptacode.id.",
+                )}
                 className="text-muted-foreground hover:text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <IconBrandWhatsapp size={20} />
                 <span className="sr-only">Whatsapp</span>
               </Link>
               <Link
-                href="#"
+                href={LINKEDIN_URL}
                 className="text-muted-foreground hover:text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <IconBrandLinkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="#"
+                href={getEmailUrl(EMAIL_ADDRESS)}
                 className="text-muted-foreground hover:text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <IconMail size={20} />
                 <span className="sr-only">Email</span>
               </Link>
               <Link
-                href="#"
+                href={TIKTOK_URL}
                 className="text-muted-foreground hover:text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <IconBrandTiktok size={20} />
                 <span className="sr-only">Tiktok</span>
@@ -140,19 +161,30 @@ const MainFooter = () => {
             <div className="text-muted-foreground space-y-1 text-sm">
               <p>Phone number:</p>
               <Link
-                href="/contact"
+                href={getWhatsappMessageUrl(
+                  PHONE_NUMBER,
+                  "Halo, saya ingin menanyakan tentang layanan Anda yang tersedia pada website ciptacode.id.",
+                )}
                 className="text-primary text-base font-extrabold"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                +62 853-6002-7891
+                +62{" "}
+                {PHONE_NUMBER.slice(2).replace(
+                  /(\d{3})(\d{4})(\d{4})/,
+                  "$1-$2-$3",
+                )}
               </Link>
             </div>
             <div className="text-muted-foreground text-sm">
               <p>Email address:</p>
               <Link
-                href="mailto:ciptaprojects@gmail.com"
+                href={getEmailUrl(EMAIL_ADDRESS)}
                 className="text-primary text-base font-bold hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                ciptaprojects@gmail.com
+                {EMAIL_ADDRESS}
               </Link>
             </div>
           </div>
