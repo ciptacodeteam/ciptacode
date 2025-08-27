@@ -3,6 +3,16 @@ import MainHeader from "@/components/headers/MainHeader";
 import LegalContentSection from "@/components/legal/LegalContentSection";
 import LegalHeroSection from "@/components/legal/LegalHeroSection";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service - Ciptacode",
+  description: "Learn about our terms of service and user agreements.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function TermsPage() {
   return (
