@@ -8,15 +8,16 @@ type Props = {
 
 const BrandLogo = ({ clickable }: Props) => {
   return (
-    <>
+    <div className="flex-center h-auto w-32">
       {clickable ? (
         <Link href={"/"} className="flex-center w-fit">
           <Image
             src={Logo}
             width={120}
             height={120}
+            priority
             alt="Ciptacode Logo"
-            className="object-contain"
+            className="h-full w-full object-contain"
           />
         </Link>
       ) : (
@@ -24,11 +25,12 @@ const BrandLogo = ({ clickable }: Props) => {
           src={Logo}
           width={120}
           height={120}
+          priority
           alt="Ciptacode Logo"
-          className="object-contain"
+          className="h-full w-full object-contain"
         />
       )}
-    </>
+    </div>
   );
 };
 export default BrandLogo;
