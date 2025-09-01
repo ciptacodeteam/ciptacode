@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description:
       "Ciptacode — Digital agency in Indonesia specializing in ERP Development, Website Development, and Apps & Web Solutions for startups and enterprises.",
     images: ["https://ciptacode.id/images/twitter-banner.jpg"],
-    creator: "@ciptacode",
+    creator: "@ciptacode.id",
   },
 };
 
