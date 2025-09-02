@@ -90,7 +90,7 @@ const NotFoundPage = () => {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground glow-accent group px-8 py-6 text-lg font-semibold"
               >
-                <Link href="/" className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2" prefetch>
                   <Home className="h-5 w-5" />
                   Go back home
                 </Link>

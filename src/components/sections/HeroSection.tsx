@@ -112,7 +112,7 @@ const HeroSection = () => {
                   size="lg"
                   className="group px-8 py-6 text-lg font-semibold"
                 >
-                  <Link href="/contact">
+                  <Link href="/contact" prefetch>
                     Get Free Quote
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -130,7 +130,7 @@ const HeroSection = () => {
                   size="lg"
                   className="group border-primary text-primary hover:bg-primary hover:text-primary-foreground border-2 bg-transparent px-8 py-6 text-lg"
                 >
-                  <Link href="/portfolio">
+                  <Link href="/portfolio" prefetch>
                     <Play className="mr-2 h-5 w-5" />
                     View Success Stories
                   </Link>

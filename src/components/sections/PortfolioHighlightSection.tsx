@@ -231,7 +231,7 @@ const PortfolioHighlightSection = () => {
             variant="outline"
             className="group hover:bg-primary bg-transparent"
           >
-            <Link href="/portfolio">
+            <Link href="/portfolio" prefetch>
               View All Projects
               <TrendingUp className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>

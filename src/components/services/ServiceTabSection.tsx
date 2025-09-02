@@ -262,7 +262,7 @@ const ServiceTabSection = () => {
                         size="lg"
                         className="glow-primary group w-full"
                       >
-                        <Link href="/contact">
+                        <Link href="/contact" prefetch>
                           Get Started with {service.title}
                           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
