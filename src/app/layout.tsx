@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/favicon.ico", type: "image/x-icon" }],
   openGraph: {
     title: "Ciptacode - ERP Development, Apps & Webs Developer",
     description:

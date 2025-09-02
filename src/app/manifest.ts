@@ -4,8 +4,16 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Ciptacode",
     short_name: "Ciptacode",
+    description:
+      "Ciptacode — Digital agency in Indonesia specializing in ERP Development, Website Development, and Apps & Web Solutions for startups and enterprises.",
+    orientation: "portrait",
     start_url: "/",
     icons: [
+      {
+        src: "/favicon.ico",
+        sizes: "256x256",
+        type: "image/x-icon",
+      },
       {
         src: "/images/android-chrome-192x192.png",
         sizes: "192x192",

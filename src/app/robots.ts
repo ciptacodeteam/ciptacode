@@ -5,7 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/privacy", "/terms"],
     },
     sitemap: "https://ciptacode.id/sitemap.xml",
   };
