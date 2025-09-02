@@ -190,7 +190,7 @@ const WorkflowSection = () => {
                 size="lg"
                 className="group hover:bg-accent text-foreground hover:border-accent bg-white hover:text-white"
               >
-                <Link href="/contact">
+                <Link href="/contact" prefetch>
                   Start Your Project
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>

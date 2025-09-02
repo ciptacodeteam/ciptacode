@@ -15,6 +15,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 const services = [
@@ -258,17 +259,15 @@ const ServiceHighlightSection = () => {
                         </Button>
                       </div>
 
-                      <Button
-                        className="group/btn w-full"
-                        onClick={() => {
-                          // Scroll to contact form or open contact modal
-                          document
-                            .getElementById("contact")
-                            ?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                      >
-                        {service.cta}
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      <Button className="group/btn w-full">
+                        <Link
+                          href={"/contact"}
+                          className="flex items-center"
+                          prefetch
+                        >
+                          {service.cta}
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>

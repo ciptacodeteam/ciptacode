@@ -46,7 +46,7 @@ const FeaturedCaseStudySection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Image placeholder */}
               <div className="from-primary/20 to-accent/20 relative flex h-64 cursor-pointer items-center justify-center rounded bg-gradient-to-br lg:h-auto">
-                <Link href="/portfolio">
+                <Link href="/portfolio" prefetch>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
@@ -115,7 +115,7 @@ const FeaturedCaseStudySection = () => {
                 </div>
 
                 <Button asChild className="group">
-                  <Link href="/portfolio">
+                  <Link href="/portfolio" prefetch>
                     View Full Case Study
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>

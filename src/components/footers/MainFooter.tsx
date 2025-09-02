@@ -89,6 +89,7 @@ const MainFooter = () => {
                   <Link
                     href="/services#website"
                     className="text-muted-foreground hover:text-primary"
+                    prefetch
                   >
                     Website Development
                   </Link>
@@ -97,6 +98,7 @@ const MainFooter = () => {
                   <Link
                     href="/services#erp"
                     className="text-muted-foreground hover:text-primary"
+                    prefetch
                   >
                     ERP Development
                   </Link>
@@ -105,6 +107,7 @@ const MainFooter = () => {
                   <Link
                     href="/services#apps"
                     className="text-muted-foreground hover:text-primary"
+                    prefetch
                   >
                     Apps & Web Development
                   </Link>
@@ -120,6 +123,7 @@ const MainFooter = () => {
                   <Link
                     href="/portfolio"
                     className="text-muted-foreground hover:text-primary"
+                    prefetch
                   >
                     Portfolio
                   </Link>
@@ -128,6 +132,7 @@ const MainFooter = () => {
                   <Link
                     href="/about"
                     className="text-muted-foreground hover:text-primary"
+                    prefetch
                   >
                     About Us
                   </Link>
@@ -136,6 +141,7 @@ const MainFooter = () => {
                   <Link
                     href="/contact"
                     className="text-muted-foreground hover:text-primary"
+                    prefetch
                   >
                     Contact Us
                   </Link>
@@ -199,12 +205,14 @@ const MainFooter = () => {
               <Link
                 href="/privacy"
                 className="text-muted-foreground hover:text-primary"
+                prefetch
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
                 className="text-muted-foreground hover:text-primary"
+                prefetch
               >
                 Terms of Service
               </Link>

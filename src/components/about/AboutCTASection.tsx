@@ -43,7 +43,7 @@ const AboutCTASection = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Button asChild size="lg" className="glow-primary group">
-                <Link href="/contact">
+                <Link href="/contact" prefetch>
                   Start Your Project
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -61,7 +61,7 @@ const AboutCTASection = () => {
                 size="lg"
                 className="group bg-transparent"
               >
-                <Link href="/careers">
+                <Link href="/contact" prefetch>
                   <Users className="mr-2 h-4 w-4" />
                   Join Our Team
                 </Link>
