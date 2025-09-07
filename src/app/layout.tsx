@@ -11,6 +11,7 @@ import { Toaster } from "sonner";
 import { ErrorBoundary } from "@/components/ui/error-boundary";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ciptacode.id"),
   title: "Ciptacode - ERP Development, Apps & Webs Developer",
   description:
     "Ciptacode — Digital agency in Indonesia specializing in ERP Development, Website Development, and Apps & Web Solutions for startups and enterprises.",
@@ -25,11 +26,21 @@ export const metadata: Metadata = {
   authors: [{ name: "Ciptacode Team", url: "https://ciptacode.id" }],
   creator: "Ciptacode Team",
   publisher: "Ciptacode",
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
   },
-  icons: [{ rel: "icon", url: "/favicon.ico", type: "image/x-icon" }],
+  alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { rel: "icon", url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/images/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/images/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+    ],
+    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: ["/favicon.ico"],
+  },
   openGraph: {
     title: "Ciptacode - ERP Development, Apps & Webs Developer",
     description:
@@ -44,7 +55,7 @@ export const metadata: Metadata = {
         alt: "Ciptacode Landing Page Banner",
       },
     ],
-    locale: "en_ID",
+    locale: "id_ID",
     type: "website",
   },
   twitter: {
@@ -125,7 +136,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en_ID"
+      lang="id_ID"
       className={cn(satoshi.variable, bebasNeue.variable)}
       suppressHydrationWarning
     >
