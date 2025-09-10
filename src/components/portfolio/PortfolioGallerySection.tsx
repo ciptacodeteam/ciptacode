@@ -37,7 +37,7 @@ export const portfolioProjects: Project[] = [
   {
     id: "chez",
     previewLink: null,
-    title: "Aesthetic Landing Page for Backery & Cafe",
+    title: "Aesthetic Landing Page for Bakery & Cafe",
     category: "Web Development",
     description:
       "Chez Bakery & Cafe’s landing page combines warm aesthetics with user-friendly design, creating an inviting online presence that attracts and retains customers.",
