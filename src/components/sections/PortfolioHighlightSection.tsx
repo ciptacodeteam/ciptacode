@@ -73,6 +73,7 @@ const PortfolioHighlightSection = () => {
                         project.image ||
                         "https://placehold.co/500x300?text=No+Image"
                       }
+                      priority
                       alt={project.title}
                       className="h-[268px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
                       width={500}
