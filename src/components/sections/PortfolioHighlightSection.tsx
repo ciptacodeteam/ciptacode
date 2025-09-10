@@ -178,12 +178,14 @@ const PortfolioHighlightSection = () => {
                                     ),
                                   )}
                                 </div>
-                                <Button asChild className="mt-4 w-full">
-                                  <Link href={selectedProject.previewLink}>
-                                    Visit Website
-                                    <ExternalLink className="ml-2 h-4 w-4" />
-                                  </Link>
-                                </Button>
+                                {selectedProject.previewLink && (
+                                  <Button asChild className="mt-4 w-full">
+                                    <Link href={selectedProject.previewLink}>
+                                      Visit Website
+                                      <ExternalLink className="ml-2 h-4 w-4" />
+                                    </Link>
+                                  </Button>
+                                )}
                               </div>
                             </div>
                           </>
@@ -191,27 +193,29 @@ const PortfolioHighlightSection = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          asChild
-                          className="hover:bg-primary"
-                        >
-                          <Link
-                            href={project.previewLink}
-                            rel="noopener noreferrer"
-                            target="_blank"
+                    {project.previewLink && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            asChild
+                            className="hover:bg-primary"
                           >
-                            <ExternalLink className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Preview</p>
-                      </TooltipContent>
-                    </Tooltip>
+                            <Link
+                              href={project.previewLink}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                            </Link>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live Preview</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    )}
                   </div>
                 </CardContent>
               </Card>

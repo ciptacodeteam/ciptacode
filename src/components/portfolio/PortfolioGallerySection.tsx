@@ -19,7 +19,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type Project = {
   id: string;
-  previewLink: string;
+  previewLink: string | null;
   title: string;
   category: string;
   description: string;
@@ -35,20 +35,60 @@ type Project = {
 
 export const portfolioProjects: Project[] = [
   {
-    id: "mutual-property",
-    previewLink: "https://mutualproperty.co.id",
-    title: "Real Estate Management System",
+    id: "chez",
+    previewLink: null,
+    title: "Aesthetic Landing Page for Backery & Cafe",
     category: "Web Development",
     description:
-      "Comprehensive property management platform that streamlines operations and enhances user experience.",
+      "Chez Bakery & Cafe’s landing page combines warm aesthetics with user-friendly design, creating an inviting online presence that attracts and retains customers.",
+    image: "/images/portfolio/chez.webp",
+    technologies: ["NextJS", "React", "PostgreSQL"],
+    metrics: {
+      users: "1K+",
+      satisfaction: "95%",
+      engagement: "+30%",
+    },
+    duration: "2 Weeks",
+    client: "Chez Bakery & Cafe",
+    industry: "Food & Beverage",
+    teamSize: "2 Members",
+    year: "2025",
+  },
+  {
+    id: "plaza-ac",
+    previewLink: "https://www.plazaac.co.id",
+    title: "Modern Landing Page for Innovative Product Showcases",
+    category: "Web Development",
+    description:
+      "Discover how we helped PT. Genba Inti Solusindo boost their online presence with a visually stunning, high-converting landing page. Engaging visuals, seamless navigation, and a focus on user experience led to a remarkable increase in conversions.",
+    image: "/images/portfolio/plaza-ac.webp",
+    technologies: ["NextJS", "React", "PostgreSQL"],
+    metrics: {
+      users: "500+",
+      conversion: "+25%",
+      bounceRate: "-15%",
+    },
+    duration: "1 Week",
+    client: "PT. Genba Inti Solusindo",
+    industry: "Real Estate",
+    teamSize: "2 Members",
+    year: "2025",
+  },
+  {
+    id: "mutual-property",
+    previewLink: "https://mutualproperty.co.id",
+    title: "Revolutionizing Real Estate Management",
+    category: "Web Development",
+    description:
+      "A comprehensive platform that transformed property management for Mutual Property. With streamlined operations, intuitive dashboards, and real-time tracking, clients and agents enjoy a seamless experience from listing to closing.",
     image: "/images/portfolio/mutualproperty.webp",
     technologies: ["React", "Laravel", "MySQL", "AWS"],
     metrics: {
       efficiency: "+40%",
-      processing: "-60%",
+      processingTime: "-60%",
       users: "500+",
     },
-    duration: "3 months",
+    duration: "3 Months",
     client: "Mutual Property",
     industry: "Real Estate",
     teamSize: "2 Members",
@@ -57,18 +97,18 @@ export const portfolioProjects: Project[] = [
   {
     id: "yanks-and-brits",
     previewLink: "https://system.yanksandbrits.co.id",
-    title: "EduTech Management System",
+    title: "Empowering Education with Smart Management",
     category: "ERP Development",
     description:
-      "Innovative platform for managing educational institutions, enhancing communication between students, teachers, and parents.",
+      "Yanks and Brits English Institute now connects students, teachers, and parents like never before. Our platform fosters collaboration, simplifies communication, and enhances learning outcomes with innovative digital tools.",
     image: "/images/portfolio/yanks.webp",
     technologies: ["NextJS", "React", "PostgreSQL", "Vercel"],
     metrics: {
-      downloads: "50K+",
       rating: "4.8★",
-      transactions: "$2M+",
+      satisfaction: "98%",
+      retention: "+30%",
     },
-    duration: "2 months",
+    duration: "2 Months",
     client: "Yanks and Brits English Institute",
     industry: "Education",
     teamSize: "3 Members",
@@ -77,56 +117,38 @@ export const portfolioProjects: Project[] = [
   {
     id: "7a",
     previewLink: "https://www.7anugrah.com/",
-    title: "Web Application",
+    title: "Professional Landing Page That Converts",
     category: "Web Development",
     description:
-      "HIPAA-compliant platform serving 10K+ patients with telemedicine and appointment management features.",
+      "PT. Tujuh Anugrah Abadi’s new landing page captivates visitors with a sleek design and persuasive content, driving engagement and turning leads into loyal customers.",
     image: "/images/portfolio/7a.webp",
     technologies: ["NextJS", "React", "PostgreSQL", "Vercel"],
     metrics: {
-      patients: "10K+",
+      users: "1K+",
       satisfaction: "95%",
       efficiency: "+35%",
     },
     duration: "2 Weeks",
     client: "PT. Tujuh Anugrah Abadi",
     industry: "Logistics",
-    teamSize: "1 Members",
-    year: "2024",
-  },
-  {
-    id: "ansama",
-    previewLink: "https://ansama.co.id",
-    title: "Landing Page",
-    category: "Web Development",
-    description: "A modern landing page for showcasing products and services.",
-    image: "/images/portfolio/ansama.webp",
-    technologies: ["NextJS", "React", "Vercel"],
-    metrics: {
-      patients: "10K+",
-      satisfaction: "95%",
-      efficiency: "+35%",
-    },
-    duration: "1 Weeks",
-    client: "PT. Aneka Sari Utama",
-    industry: "Logistics",
-    teamSize: "1 Members",
+    teamSize: "1 Member",
     year: "2024",
   },
   {
     id: "skyview",
     previewLink: "https://www.skyview.co.id/",
-    title: "Landing Page",
+    title: "Showcasing Luxury Living with Style",
     category: "Web Development",
-    description: "Landing page for showcasing products and services.",
+    description:
+      "Skyview Setiabudi Apartment’s website blends elegance and functionality, featuring immersive galleries and a user-friendly contact form that drives inquiries.",
     image: "/images/portfolio/skyview.webp",
     technologies: ["NextJS", "React", "Vercel"],
     metrics: {
-      patients: "10K+",
-      satisfaction: "95%",
-      efficiency: "+35%",
+      users: "5K+",
+      satisfaction: "90%",
+      inquiries: "+120%",
     },
-    duration: "1 Weeks",
+    duration: "1 Week",
     client: "Skyview Setiabudi Apartment",
     industry: "Real Estate",
     teamSize: "2 Members",
@@ -135,36 +157,38 @@ export const portfolioProjects: Project[] = [
   {
     id: "sugarbaby",
     previewLink: "https://sugarbaby-id.vercel.app/",
-    title: "Landing Page",
+    title: "Deliciously Designed Commercial Landing Page",
     category: "Web Development",
-    description: "Landing page for showcasing products and services.",
+    description:
+      "Sugar Baby Bakery’s landing page tempts visitors with mouth-watering visuals and a delightful browsing experience, boosting brand awareness and sales.",
     image: "/images/portfolio/sugarbaby.webp",
     technologies: ["NextJS", "React", "Vercel"],
     metrics: {
-      patients: "10K+",
+      users: "2K+",
       satisfaction: "95%",
-      efficiency: "+35%",
+      sales: "+30%",
     },
-    duration: "1 Weeks",
+    duration: "1 Week",
     client: "Sugar Baby Bakery",
-    industry: "F&B",
+    industry: "Food & Beverage",
     teamSize: "2 Members",
     year: "2024",
   },
   {
     id: "velure",
     previewLink: "https://www.velureperfume.store",
-    title: "Landing Page",
+    title: "Elegant Landing Page for a Fragrant Brand",
     category: "Web Development",
-    description: "Landing page for showcasing products and services.",
+    description:
+      "Velure Perfume’s online presence now matches its luxurious scents. The new landing page enchants visitors and encourages them to explore the full collection.",
     image: "/images/portfolio/velure.webp",
     technologies: ["NextJS", "React", "Vercel"],
     metrics: {
-      patients: "10K+",
+      users: "10K+",
       satisfaction: "95%",
-      efficiency: "+35%",
+      conversion: "+20%",
     },
-    duration: "1 Weeks",
+    duration: "1 Week",
     client: "Velure Perfume",
     industry: "Beauty",
     teamSize: "2 Members",
@@ -173,21 +197,42 @@ export const portfolioProjects: Project[] = [
   {
     id: "xfl",
     previewLink: "https://www.xfl123.id",
-    title: "Landing Page",
+    title: "Dynamic Landing Page for Sports Enthusiasts",
     category: "Web Development",
-    description: "Landing page for showcasing products and services.",
+    description:
+      "Xtream Football Club’s landing page energizes fans and players alike, featuring bold visuals and interactive elements that keep visitors coming back.",
     image: "/images/portfolio/xfl123.webp",
     technologies: ["NextJS", "React", "Vercel"],
     metrics: {
-      patients: "10K+",
+      users: "10K+",
       satisfaction: "95%",
-      efficiency: "+35%",
+      engagement: "+40%",
     },
-    duration: "1 Weeks",
+    duration: "1 Week",
     client: "Xtream Football Club",
     industry: "Sport",
     teamSize: "2 Members",
     year: "2025",
+  },
+  {
+    id: "ansama",
+    previewLink: "https://ansama.co.id",
+    title: "Engaging Landing Page for Modern Brands",
+    category: "Web Development",
+    description:
+      "PT. Aneka Sari Utama’s landing page delivers a fresh, modern look that resonates with customers. Fast loading, mobile-friendly, and designed to inspire action.",
+    image: "/images/portfolio/ansama.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      users: "10K+",
+      satisfaction: "95%",
+      efficiency: "+35%",
+    },
+    duration: "1 Week",
+    client: "PT. Aneka Sari Utama",
+    industry: "Logistics",
+    teamSize: "1 Member",
+    year: "2024",
   },
 ];
 
@@ -199,7 +244,7 @@ const categories = [
 ];
 const industries = [
   "All",
-  "F&B",
+  "Food & Beverage",
   "Real Estate",
   "Logistic",
   "Education",
@@ -282,125 +327,136 @@ const PortfolioGallerySection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              whileHover={{
-                y: -10,
-                rotateY: 5,
-                transition: { type: "spring", stiffness: 300, damping: 20 },
-              }}
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              <Card className="glass group h-full cursor-pointer overflow-hidden border-0 py-0">
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={
-                      project.image ||
-                      "https://placehold.co/500x300?text=No+Image"
-                    }
-                    alt={project.title}
-                    className="h-[268px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    width={500}
-                    height={300}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary/90 text-primary-foreground">
-                      {project.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                <CardContent className="px-6 pb-6">
-                  <div className="mb-2 flex items-center justify-between">
-                    <Badge variant="outline" className="text-xs">
-                      {project.industry}
-                    </Badge>
-                    <span className="text-muted-foreground text-xs">
-                      {project.year}
-                    </span>
-                  </div>
-                  <h3 className="group-hover:text-primary mb-2 text-lg font-semibold transition-colors">
-                    {project.client}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
-                    {project.description}
-                  </p>
-
-                  <div className="mb-4 flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
+          {filteredProjects
+            .sort((a, b) => b.year.localeCompare(a.year))
+            .map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                whileHover={{
+                  y: -10,
+                  rotateY: 5,
+                  transition: { type: "spring", stiffness: 300, damping: 20 },
+                }}
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                <Card className="glass group h-full cursor-pointer overflow-hidden border-0 py-0">
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={
+                        project.image ||
+                        "https://placehold.co/500x300?text=No+Image"
+                      }
+                      alt={project.title}
+                      className="h-[268px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={500}
+                      height={300}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-primary/90 text-primary-foreground">
+                        {project.category}
                       </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <Badge variant="secondary" className="text-xs">
-                        +{project.technologies.length - 3}
-                      </Badge>
-                    )}
+                    </div>
                   </div>
 
-                  <div className="flex gap-2">
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button
-                          size="sm"
-                          onClick={() => setSelectedProject(project)}
-                          className="flex-1"
+                  <CardContent className="px-6 pb-6">
+                    <div className="mb-2 flex items-center justify-between">
+                      <Badge variant="outline" className="text-xs">
+                        {project.industry}
+                      </Badge>
+                      <span className="text-muted-foreground text-xs">
+                        {project.year}
+                      </span>
+                    </div>
+                    <h3 className="group-hover:text-primary mb-2 text-lg font-semibold transition-colors">
+                      {project.client}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
+                      {project.description}
+                    </p>
+
+                    <div className="mb-4 flex flex-wrap gap-1">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="text-xs"
                         >
-                          <Eye className="mr-2 h-4 w-4" />
-                          Quick View
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
-                        {selectedProject && (
-                          <>
-                            <DialogHeader>
-                              <DialogTitle className="text-2xl">
-                                {selectedProject.title}
-                              </DialogTitle>
-                            </DialogHeader>
-                            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                              <div>
-                                <Image
-                                  src={
-                                    selectedProject.image ||
-                                    "https://placehold.co/500x300?text=No+Image"
-                                  }
-                                  alt={selectedProject.title}
-                                  className="h-[268px] w-full rounded-lg object-cover"
-                                  width={500}
-                                  height={300}
-                                />
-                              </div>
-                              <div className="space-y-4">
-                                <p className="text-muted-foreground">
-                                  {selectedProject.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                                  {selectedProject.technologies.map((tech) => (
-                                    <Badge key={tech} variant="outline">
-                                      {tech}
-                                    </Badge>
-                                  ))}
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <Badge variant="secondary" className="text-xs">
+                          +{project.technologies.length - 3}
+                        </Badge>
+                      )}
+                    </div>
+
+                    <div className="flex gap-2">
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button
+                            size="sm"
+                            onClick={() => setSelectedProject(project)}
+                            className="flex-1"
+                          >
+                            <Eye className="mr-2 h-4 w-4" />
+                            Quick View
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
+                          {selectedProject && (
+                            <>
+                              <DialogHeader>
+                                <DialogTitle className="text-2xl">
+                                  {selectedProject.title}
+                                </DialogTitle>
+                              </DialogHeader>
+                              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <div>
+                                  <Image
+                                    src={
+                                      selectedProject.image ||
+                                      "https://placehold.co/500x300?text=No+Image"
+                                    }
+                                    alt={selectedProject.title}
+                                    className="h-[268px] w-full rounded-lg object-cover"
+                                    width={500}
+                                    height={300}
+                                  />
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                  <div className="flex items-center space-x-2 text-sm">
-                                    <Calendar className="text-muted-foreground h-4 w-4" />
-                                    <span>{selectedProject.duration}</span>
+                                <div className="space-y-4">
+                                  <p className="text-muted-foreground">
+                                    {selectedProject.description}
+                                  </p>
+                                  <div className="flex flex-wrap gap-2">
+                                    {selectedProject.technologies.map(
+                                      (tech) => (
+                                        <Badge key={tech} variant="outline">
+                                          {tech}
+                                        </Badge>
+                                      ),
+                                    )}
                                   </div>
-                                  <div className="flex items-center space-x-2 text-sm">
-                                    <Users className="text-muted-foreground h-4 w-4" />
-                                    <span>{selectedProject.teamSize}</span>
+                                  <div className="grid grid-cols-2 gap-4">
+                                    <div className="flex items-center space-x-2 text-sm">
+                                      <Calendar className="text-muted-foreground h-4 w-4" />
+                                      <span>{selectedProject.duration}</span>
+                                    </div>
+                                    <div className="flex items-center space-x-2 text-sm">
+                                      <Users className="text-muted-foreground h-4 w-4" />
+                                      <span>{selectedProject.teamSize}</span>
+                                    </div>
                                   </div>
-                                </div>
-                                <div className="grid grid-cols-3 gap-4 border-t pt-4">
-                                  {Object.entries(selectedProject.metrics).map(
-                                    ([key, value]) => (
+                                  <div className="grid grid-cols-3 gap-4 border-t pt-4">
+                                    {Object.entries(
+                                      selectedProject.metrics,
+                                    ).map(([key, value]) => (
                                       <div key={key} className="text-center">
                                         <div className="text-primary text-lg font-bold">
                                           {value}
@@ -409,48 +465,51 @@ const PortfolioGallerySection = () => {
                                           {key.replace(/([A-Z])/g, " $1")}
                                         </div>
                                       </div>
-                                    ),
+                                    ))}
+                                  </div>
+                                  {selectedProject.previewLink && (
+                                    <Button asChild className="mt-4 w-full">
+                                      <Link href={selectedProject.previewLink}>
+                                        Visit Website
+                                        <ExternalLink className="ml-2 h-4 w-4" />
+                                      </Link>
+                                    </Button>
                                   )}
                                 </div>
-                                <Button asChild className="mt-4 w-full">
-                                  <Link href={selectedProject.previewLink}>
-                                    Visit Website
-                                    <ExternalLink className="ml-2 h-4 w-4" />
-                                  </Link>
-                                </Button>
                               </div>
-                            </div>
-                          </>
-                        )}
-                      </DialogContent>
-                    </Dialog>
+                            </>
+                          )}
+                        </DialogContent>
+                      </Dialog>
 
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          asChild
-                          className="hover:bg-primary"
-                        >
-                          <Link
-                            href={project.previewLink}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            <ExternalLink className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Preview</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                      {project.previewLink && (
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              asChild
+                              className="hover:bg-primary"
+                            >
+                              <Link
+                                href={project.previewLink}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                <ExternalLink className="h-4 w-4" />
+                              </Link>
+                            </Button>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Live Preview</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
         </motion.div>
 
         {filteredProjects.length === 0 && (

@@ -44,6 +44,12 @@ const PortfolioPage = () => {
         />
         <link rel="preload" href={"/images/portfolio/velure.webp"} as="image" />
         <link rel="preload" href={"/images/portfolio/xfl123.webp"} as="image" />
+        <link
+          rel="preload"
+          href={"/images/portfolio/plaza-ac.webp"}
+          as="image"
+        />
+        <link rel="preload" href={"/images/portfolio/chez.webp"} as="image" />
       </Head>
 
       <main>
