@@ -1,36 +1,8 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
-
-function AnimatedNumber({
-  value,
-  suffix = "",
-}: {
-  value: number;
-  suffix?: string;
-}) {
-  const ref = useRef<HTMLSpanElement | null>(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 3000 });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
-  }, [motionValue, value, isInView]);
-
-  useEffect(() => {
-    springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = Math.floor(latest) + suffix;
-      }
-    });
-  }, [springValue, suffix]);
-
-  return <span ref={ref} />;
-}
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import AnimatedNumber from "../ui/AnimatedNumber";
 
 const stats = [
   { value: 100, suffix: "+", label: "Projects Delivered" },
