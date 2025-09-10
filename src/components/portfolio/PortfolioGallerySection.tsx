@@ -70,7 +70,7 @@ export const portfolioProjects: Project[] = [
     },
     duration: "1 Week",
     client: "PT. Genba Inti Solusindo",
-    industry: "Real Estate",
+    industry: "HVAC Services",
     teamSize: "2 Members",
     year: "2025",
   },
