@@ -1,16 +1,15 @@
-import type { Metadata } from "next";
+import AboutCTASection from "@/components/about/AboutCTASection";
 import AboutHeroSection from "@/components/about/AboutHeroSection";
 import MissionValueSection from "@/components/about/MissionValueSection";
-import TeamGridSection from "@/components/about/TeamGridSection";
-import AboutCTASection from "@/components/about/AboutCTASection";
-import MainFooter from "@/components/footers/MainFooter";
-import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import MainHeader from "@/components/headers/MainHeader";
-import ClientMarqueeSection from "@/components/sections/ClientMarqueeSection";
-import AnimatedStatSection from "@/components/sections/AnimatedStatSection";
 import ContactInfoSection from "@/components/contact/ContactInfoSection";
+import MainFooter from "@/components/footers/MainFooter";
+import MainHeader from "@/components/headers/MainHeader";
+import AnimatedStatSection from "@/components/sections/AnimatedStatSection";
+import ClientMarqueeSection from "@/components/sections/ClientMarqueeSection";
 import FeaturedCaseStudySection from "@/components/sections/FeaturedCaseStudySection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us - Ciptacode | Our Mission, Team & Values",
@@ -29,7 +28,7 @@ const AboutPage = () => {
       <MainHeader />
       <AboutHeroSection />
       <MissionValueSection />
-      <TeamGridSection />
+      {/* <TeamGridSection /> */}
 
       <FeaturedCaseStudySection />
       <AnimatedStatSection />
