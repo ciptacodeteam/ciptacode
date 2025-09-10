@@ -34,7 +34,7 @@ const workflowSteps = [
       "30% payment secures your project slot and begins the design phase",
     icon: Palette,
     action: "Design Phase Begins",
-    payment: "30%",
+    payment: "50%",
     color: "from-blue-500 to-blue-600",
   },
   {
@@ -45,7 +45,7 @@ const workflowSteps = [
     details: "40% payment starts development with regular progress updates",
     icon: Code,
     action: "Development Starts",
-    payment: "40%",
+    payment: 0,
     color: "from-red-500 to-red-600",
   },
   {
@@ -55,7 +55,7 @@ const workflowSteps = [
     details: "Final 30% payment upon successful testing and project delivery",
     icon: Rocket,
     action: "Project Launch",
-    payment: "30%",
+    payment: "Final 50%",
     color: "from-cyan-500 to-cyan-600",
   },
 ];

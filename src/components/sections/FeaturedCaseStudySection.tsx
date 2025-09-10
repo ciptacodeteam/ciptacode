@@ -29,11 +29,11 @@ const FeaturedCaseStudySection = () => {
             Featured Case Study
           </Badge>
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Transforming Retail with Technology
+            Transforming F&B with Technology
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            See how we helped transform a traditional retail business into a
-            digital-first operation.
+            See how we helped transform a traditional food and beverage business
+            into a digital-first operation.
           </p>
         </motion.div>
 
@@ -56,7 +56,7 @@ const FeaturedCaseStudySection = () => {
                       <ExternalLink className="h-12 w-12 text-white" />
                     </div>
                     <p className="font-medium text-white/80">
-                      Transforming Retail with Technology
+                      Transforming F&B with Technology
                     </p>
                   </motion.div>
                 </Link>
@@ -65,20 +65,22 @@ const FeaturedCaseStudySection = () => {
               {/* Content */}
               <CardContent className="p-8 lg:p-12">
                 <div className="mb-4 flex flex-wrap gap-2">
-                  <Badge variant="secondary">ERP Development</Badge>
+                  <Badge variant="secondary">NextJS</Badge>
                   <Badge variant="secondary">React</Badge>
                   <Badge variant="secondary">Node.js</Badge>
                   <Badge variant="secondary">PostgreSQL</Badge>
                 </div>
 
                 <h3 className="mb-4 text-2xl font-bold">
-                  RetailFlow: Complete ERP Transformation
+                  Digital Transformation for a Leading F&B Company
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  We built a comprehensive ERP system that streamlined inventory
-                  management, automated financial reporting, and integrated with
-                  existing POS systems, resulting in 40% operational efficiency
-                  improvement.
+                  We partnered with a traditional food and beverage company to
+                  modernize their operations. By developing a custom web
+                  application, we streamlined their ordering process, improved
+                  inventory management, and enhanced customer engagement. The
+                  new platform led to a 40% increase in operational efficiency
+                  and a 60% reduction in order processing time.
                 </p>
 
                 <div className="mb-8 grid grid-cols-2 gap-6">
@@ -95,22 +97,24 @@ const FeaturedCaseStudySection = () => {
                       60%
                     </div>
                     <div className="text-muted-foreground text-sm">
-                      Time Saved
+                      Order Time Reduction
                     </div>
                   </div>
                   <div>
                     <div className="text-primary mb-1 text-2xl font-bold">
-                      124 juta
+                      90%
                     </div>
                     <div className="text-muted-foreground text-sm">
-                      Cost Savings
+                      Engagement Boost
                     </div>
                   </div>
                   <div>
                     <div className="text-primary mb-1 text-2xl font-bold">
-                      99.9%
+                      24/7
                     </div>
-                    <div className="text-muted-foreground text-sm">Uptime</div>
+                    <div className="text-muted-foreground text-sm">
+                      Support Availability
+                    </div>
                   </div>
                 </div>
 
