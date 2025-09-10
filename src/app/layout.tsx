@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         alt: "Ciptacode Landing Page Banner",
       },
     ],
-    locale: "id_ID",
+    locale: "en_ID",
     type: "website",
   },
   twitter: {
@@ -136,7 +136,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="id_ID"
+      lang="en_ID"
       className={cn(satoshi.variable, bebasNeue.variable)}
       suppressHydrationWarning
     >
