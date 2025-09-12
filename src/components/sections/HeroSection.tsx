@@ -91,8 +91,8 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg md:text-xl"
             >
-              We deliver enterprise-grade ERP systems, high-converting websites,
-              and scalable mobile apps that drive real business results. From
+              We deliver enterprise-grade systems, high-converting websites, and
+              scalable mobile & web apps that drive real business results. From
               concept to launch in 30% less time.
             </motion.p>
 

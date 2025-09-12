@@ -17,26 +17,47 @@ import {
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-type Service = {
+export type Service = {
   icon: React.ElementType;
   title: string;
   subtitle: string;
+
+  // core messaging
   pain: string;
   solution: string;
+
+  // deliverables / stack
   deliverables: string[];
   stack: string[];
+
+  // meta
   timeline: string;
   startingPrice: string;
+
+  // optional marketing props
+  description?: string;
+  features?: string[];
+  results?: {
+    metric: string;
+    value: string;
+    timeline?: string;
+    clients?: string;
+  };
+  cta?: string;
+  testimonial?: string;
+  clientName?: string;
 };
 
-export const services: Record<string, Service> = {
+export const services: Record<"website" | "erp" | "apps", Service> = {
   website: {
     icon: Globe,
-    title: "Website Development",
+    title: "Landing Page",
     subtitle: "Modern, fast, and SEO-optimized websites",
+
     pain: "Slow, outdated websites that don't convert visitors into customers",
     solution:
       "Lightning-fast, modern websites built with Next.js that achieve 95+ Lighthouse scores and drive conversions",
+
     deliverables: [
       "Responsive web design",
       "SEO optimization",
@@ -45,24 +66,35 @@ export const services: Record<string, Service> = {
       "Analytics integration",
       "Security implementation",
     ],
-    stack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vercel",
-      "Sanity CMS",
-    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+
     timeline: "4-8 weeks",
-    startingPrice: "Rp 4.499.000",
+    startingPrice: "Rp 4.000.000",
+
+    // marketing add-ons
+    description:
+      "High-converting websites that drive 3x more leads with lightning-fast performance",
+    features: ["Next.js", "SEO Optimized", "Lighthouse 95+", "CMS Integration"],
+    results: {
+      metric: "Average ROI Increase",
+      value: "10% - 20%",
+      timeline: "2-4 weeks",
+      clients: "50+ businesses",
+    },
+    cta: "Get Website Quote",
+    testimonial: "Our new website generated 40% more leads in the first month",
+    clientName: "Sarah Chen, CEO TechStart",
   },
+
   erp: {
     icon: Database,
-    title: "ERP Development",
+    title: "Enterprise Systems",
     subtitle: "Custom enterprise resource planning solutions",
+
     pain: "Disconnected systems and manual processes that slow down business operations",
     solution:
       "Integrated ERP systems that automate workflows, provide real-time insights, and scale with your business",
+
     deliverables: [
       "Custom module development",
       "Role-based access control",
@@ -72,16 +104,39 @@ export const services: Record<string, Service> = {
       "Training and support",
     ],
     stack: ["Node.js", "React", "PostgreSQL", "Redis", "Docker", "AWS"],
+
     timeline: "12-24 weeks",
-    startingPrice: "Rp 12.499.000",
+    startingPrice: "Rp 40.000.000",
+
+    // marketing add-ons
+    description:
+      "Custom ERP systems that reduce operational costs by 40% and boost productivity",
+    features: [
+      "Custom Modules",
+      "Role-based Access",
+      "API Integrations",
+      "Real-time Analytics",
+    ],
+    results: {
+      metric: "Cost Reduction",
+      value: "40%",
+      timeline: "12-24 weeks",
+      clients: "25+ enterprises",
+    },
+    cta: "Schedule ERP Demo",
+    testimonial: "Cut our processing time in half and eliminated manual errors",
+    clientName: "Mike Rodriguez, Operations Director",
   },
+
   apps: {
     icon: Smartphone,
     title: "Apps & Web Development",
     subtitle: "Cross-platform mobile and web applications",
+
     pain: "Poor user experience and slow performance across different devices and platforms",
     solution:
       "Native-quality apps that work seamlessly across all platforms with exceptional user experience",
+
     deliverables: [
       "Cross-platform development",
       "Native performance",
@@ -98,10 +153,32 @@ export const services: Record<string, Service> = {
       "GraphQL",
       "TypeScript",
     ],
+
     timeline: "8-16 weeks",
     startingPrice: "Rp 5.899.000",
+
+    // marketing add-ons
+    description:
+      "Cross-platform apps with 4.8+ star ratings that users love and use for business operations",
+    features: [
+      "Cross-platform",
+      "PWA Support",
+      "Performance First",
+      "Native Experience",
+    ],
+    results: {
+      metric: "User Retention",
+      value: "92%",
+      timeline: "4-8 weeks",
+      clients: "35+ apps launched",
+    },
+    cta: "Start App Project",
+    testimonial: "Our app hit 10k downloads in the first week with 4.9 stars",
+    clientName: "Lisa Park, Product Manager",
   },
 };
+
+export const servicesRecord: Service[] = Object.values(services);
 
 const ServiceTabSection = () => {
   const [activeTab, setActiveTab] = useState("website");

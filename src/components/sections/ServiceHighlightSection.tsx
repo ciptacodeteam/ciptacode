@@ -9,86 +9,12 @@ import {
   ArrowRight,
   CheckCircle,
   Clock,
-  Database,
-  Globe,
-  Smartphone,
   TrendingUp,
   Users,
 } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
-
-const services = [
-  {
-    icon: Globe,
-    title: "Website Development",
-    subtitle: "Convert Visitors into Customers",
-    description:
-      "High-converting websites that drive 3x more leads with lightning-fast performance",
-    features: [
-      "Next.js & React",
-      "SEO Optimized",
-      "Lighthouse 95+",
-      "CMS Integration",
-    ],
-    results: {
-      metric: "Average ROI Increase",
-      value: "285%",
-      timeline: "2-4 weeks",
-      clients: "50+ businesses",
-    },
-    cta: "Get Website Quote",
-    testimonial: "Our new website generated 40% more leads in the first month",
-    clientName: "Sarah Chen, CEO TechStart",
-    startingPrice: "Starting at Rp 4.499.000",
-  },
-  {
-    icon: Database,
-    title: "ERP Development",
-    subtitle: "Streamline Your Operations",
-    description:
-      "Custom ERP systems that reduce operational costs by 40% and boost productivity",
-    features: [
-      "Custom Modules",
-      "Role-based Access",
-      "API Integrations",
-      "Real-time Analytics",
-    ],
-    results: {
-      metric: "Cost Reduction",
-      value: "40%",
-      timeline: "6-12 weeks",
-      clients: "25+ enterprises",
-    },
-    cta: "Schedule ERP Demo",
-    testimonial: "Cut our processing time in half and eliminated manual errors",
-    clientName: "Mike Rodriguez, Operations Director",
-    startingPrice: "Starting at Rp 14.499.000",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile & Web Apps",
-    subtitle: "Engage Users Everywhere",
-    description:
-      "Cross-platform apps with 4.8+ star ratings that users love and use daily",
-    features: [
-      "Cross-platform",
-      "PWA Support",
-      "Performance First",
-      "Native Experience",
-    ],
-    results: {
-      metric: "User Retention",
-      value: "92%",
-      timeline: "4-8 weeks",
-      clients: "35+ apps launched",
-    },
-    cta: "Start App Project",
-    testimonial: "Our app hit 10k downloads in the first week with 4.9 stars",
-    clientName: "Lisa Park, Product Manager",
-    startingPrice: "Starting at Rp 5.899.000",
-  },
-];
+import { servicesRecord } from "../services/ServiceTabSection";
 
 const ServiceHighlightSection = () => {
   const ref = useRef(null);
@@ -123,7 +49,7 @@ const ServiceHighlightSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {services.map((service, index) => (
+          {servicesRecord.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 20 }}
@@ -172,52 +98,64 @@ const ServiceHighlightSection = () => {
                       </p>
                     </div>
 
-                    <div className="bg-muted/50 mb-6 rounded-lg p-4">
-                      <div className="mb-2 flex items-center justify-between">
-                        <span className="text-muted-foreground text-sm">
-                          {service.results.metric}
-                        </span>
-                        <span className="text-primary text-2xl font-bold">
-                          {service.results.value}
-                        </span>
-                      </div>
-                      <div className="text-muted-foreground flex items-center justify-between text-xs">
-                        <div className="flex items-center">
-                          <Clock className="mr-1 h-3 w-3" />
-                          {service.results.timeline}
-                        </div>
-                        <div className="flex items-center">
-                          <Users className="mr-1 h-3 w-3" />
-                          {service.results.clients}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mb-6">
-                      <div className="grid grid-cols-2 gap-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <motion.div
-                            key={feature}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={
-                              isInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: -10 }
-                            }
-                            transition={{
-                              duration: 0.5,
-                              delay: index * 0.2 + featureIndex * 0.1 + 0.5,
-                            }}
-                            className="flex items-center text-sm"
-                          >
-                            <CheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-green-500" />
-                            <span className="text-muted-foreground">
-                              {feature}
+                    {service.results && (
+                      <div className="bg-muted/50 mb-6 rounded-lg p-4">
+                        <div className="mb-2 flex items-center justify-between">
+                          {service.results?.metric && (
+                            <span className="text-muted-foreground text-sm">
+                              {service.results?.metric}
                             </span>
-                          </motion.div>
-                        ))}
+                          )}
+                          {service.results?.value && (
+                            <span className="text-primary text-2xl font-bold">
+                              {service.results?.value}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-muted-foreground flex items-center justify-between text-xs">
+                          {service.results?.timeline && (
+                            <div className="flex items-center">
+                              <Clock className="mr-1 h-3 w-3" />
+                              {service.results?.timeline}
+                            </div>
+                          )}
+                          {service.results?.clients && (
+                            <div className="flex items-center">
+                              <Users className="mr-1 h-3 w-3" />
+                              {service.results?.clients}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    )}
+
+                    {service.features && (
+                      <div className="mb-6">
+                        <div className="grid grid-cols-2 gap-2">
+                          {service.features?.map((feature, featureIndex) => (
+                            <motion.div
+                              key={feature}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={
+                                isInView
+                                  ? { opacity: 1, x: 0 }
+                                  : { opacity: 0, x: -10 }
+                              }
+                              transition={{
+                                duration: 0.5,
+                                delay: index * 0.2 + featureIndex * 0.1 + 0.5,
+                              }}
+                              className="flex items-center text-sm"
+                            >
+                              <CheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-green-500" />
+                              <span className="text-muted-foreground">
+                                {feature}
+                              </span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     <motion.div
                       initial={false}
@@ -241,7 +179,7 @@ const ServiceHighlightSection = () => {
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="text-primary text-sm font-medium">
-                          {service.startingPrice}
+                          Starting at {service.startingPrice}
                         </span>
                         <Button
                           variant="link"
