@@ -18,7 +18,7 @@ import { useRef } from "react";
 const technologies = [
   {
     name: "Next.js",
-    category: "Frontend",
+    category: "Fullstack",
     icon: <IconBrandNextjs size={28} />,
   },
   { name: "React", category: "Frontend", icon: <IconBrandReact size={28} /> },
