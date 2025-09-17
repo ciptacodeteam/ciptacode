@@ -36,7 +36,7 @@ type Project = {
 export const portfolioProjects: Project[] = [
   {
     id: "chez",
-    previewLink: null,
+    previewLink: "https://chezbakery.id",
     title: "Aesthetic Landing Page for Bakery & Cafe",
     category: "Web Development",
     description:
