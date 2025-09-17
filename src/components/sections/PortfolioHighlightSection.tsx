@@ -12,7 +12,6 @@ import { portfolioProjects } from "../portfolio/PortfolioGallerySection";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
@@ -135,11 +134,6 @@ const PortfolioHighlightSection = () => {
                         <DialogContent className="max-h-[90vh] overflow-y-auto lg:!max-w-5xl">
                           {selectedProject && (
                             <>
-                              <DialogHeader>
-                                <DialogTitle className="text-2xl">
-                                  {selectedProject.title}
-                                </DialogTitle>
-                              </DialogHeader>
                               <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                                 <div>
                                   <Image
@@ -147,13 +141,16 @@ const PortfolioHighlightSection = () => {
                                       selectedProject.image ||
                                       "https://placehold.co/500x300?text=No+Image"
                                     }
-                                    alt={selectedProject.title}
-                                    className="h-[268px] w-full rounded-lg object-cover"
+                                    alt={selectedProject.client}
+                                    className="h-[290px] w-full rounded-lg object-cover"
                                     width={500}
                                     height={300}
                                   />
                                 </div>
                                 <div className="space-y-4">
+                                  <DialogTitle className="text-2xl">
+                                    {selectedProject.client}
+                                  </DialogTitle>
                                   <p className="text-muted-foreground">
                                     {selectedProject.description}
                                   </p>

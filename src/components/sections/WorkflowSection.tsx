@@ -30,8 +30,7 @@ const workflowSteps = [
     title: "UI/UX Design",
     description:
       "Upon agreement, we create wireframes and visual designs for your approval",
-    details:
-      "30% payment secures your project slot and begins the design phase",
+    details: "50% payment required to commence the design phase",
     icon: Palette,
     action: "Design Phase Begins",
     payment: "50%",
@@ -42,7 +41,7 @@ const workflowSteps = [
     title: "Development",
     description:
       "After design approval, our team begins coding your application",
-    details: "40% payment starts development with regular progress updates",
+    details: "No payment required to start development",
     icon: Code,
     action: "Development Starts",
     payment: 0,
@@ -52,7 +51,7 @@ const workflowSteps = [
     step: 4,
     title: "Testing & Launch",
     description: "Quality testing, final revisions, and project deployment",
-    details: "Final 30% payment upon successful testing and project delivery",
+    details: "Final 50% payment upon successful testing and project delivery",
     icon: Rocket,
     action: "Project Launch",
     payment: "Final 50%",
