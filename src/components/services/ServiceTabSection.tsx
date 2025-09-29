@@ -155,7 +155,7 @@ export const services: Record<"website" | "erp" | "apps", Service> = {
     ],
 
     timeline: "8-16 weeks",
-    startingPrice: "Rp 5.899.000",
+    startingPrice: "Rp 10.000.000",
 
     // marketing add-ons
     description:
