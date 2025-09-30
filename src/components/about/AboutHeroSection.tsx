@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Users, Target, Sparkles } from "lucide-react";
+import { Heart, Target, Users } from "lucide-react";
 
 const AboutHeroSection = () => {
   return (
@@ -22,27 +22,6 @@ const AboutHeroSection = () => {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            className="from-primary/30 to-accent/30 relative mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br backdrop-blur-sm"
-          >
-            <Heart className="text-primary h-10 w-10" />
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 8,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "linear",
-              }}
-              className="absolute top-0 right-0"
-            >
-              <Sparkles className="text-primary h-5 w-5" />
-            </motion.div>
-          </motion.div>
-
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             About{" "}
             <span className="from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent">

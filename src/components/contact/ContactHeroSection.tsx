@@ -1,12 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  CalendarDays,
-  MessageCircle,
-  MessageCircleMore,
-  SendIcon,
-} from "lucide-react";
+import { CalendarDays, MessageCircleMore, SendIcon } from "lucide-react";
 
 const ContactHeroSection = () => {
   return (
@@ -27,15 +22,6 @@ const ContactHeroSection = () => {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="from-primary/20 to-accent/20 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br"
-          >
-            <MessageCircle className="text-primary h-8 w-8" />
-          </motion.div>
-
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             Let&apos;s{" "}
             <span className="from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent">

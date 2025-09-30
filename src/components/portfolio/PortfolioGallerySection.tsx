@@ -19,6 +19,13 @@ export type Project = {
   industry: string;
   teamSize: string;
   year: string;
+  testimonial?: {
+    name: string;
+    social: string;
+    role: string;
+    image: string;
+    quote: string;
+  };
 };
 
 export const portfolioProjects: Project[] = [
@@ -41,6 +48,14 @@ export const portfolioProjects: Project[] = [
     industry: "Food & Beverage",
     teamSize: "2 Members",
     year: "2025",
+    testimonial: {
+      name: "Catherine Pho",
+      social: "@catherinepho",
+      role: "Owner Chez Bakery and Cafe",
+      image: "/images/testimonials/catherine-pho.jpg",
+      quote:
+        "Website benar-benar membantu kami. Pelanggan jadi lebih gampang lihat menu dan promo. Prosesnya cepat, desainnya cakep, dan timnya selalu siap bantu kalau ada yang perlu.",
+    },
   },
   {
     id: "plaza-ac",
@@ -61,6 +76,14 @@ export const portfolioProjects: Project[] = [
     industry: "HVAC Services",
     teamSize: "2 Members",
     year: "2025",
+    testimonial: {
+      name: "Nico Lim",
+      social: "@nicolimm",
+      role: "Owner PT. Genba Inti Solusindo",
+      image: "/images/testimonials/nico-lim.jpg",
+      quote:
+        "Kami sangat puas dengan layanan yang diberikan oleh Ciptacode. Timnya profesional, responsif, dan benar-benar memahami kebutuhan bisnis kami.",
+    },
   },
   {
     id: "mutual-property",
@@ -81,6 +104,14 @@ export const portfolioProjects: Project[] = [
     industry: "Real Estate",
     teamSize: "2 Members",
     year: "2024",
+    testimonial: {
+      name: "Chandra",
+      social: "@mrciek",
+      role: "Owner PT. Mutual Properti Indonesia",
+      image: "/images/testimonials/chandra.jpeg",
+      quote:
+        "Website properti yang dibuat Ciptacode sangat membantu kami dalam memasarkan proyek-proyek baru. Fitur pencarian dan galeri propertinya sangat user-friendly.",
+    },
   },
   {
     id: "yanks-and-brits",
@@ -121,6 +152,14 @@ export const portfolioProjects: Project[] = [
     industry: "Logistics",
     teamSize: "1 Member",
     year: "2024",
+    testimonial: {
+      name: "Michael Chang",
+      social: "@michaelchang_s",
+      role: "Owner PT. Tujuh Anugrah Abadi",
+      image: "/images/testimonials/michael-chang.jpg",
+      quote:
+        "Mereka cepat tanggap, ngerti apa yang kami butuhkan, Puas banget sama hasilnya.",
+    },
   },
   {
     id: "skyview",
@@ -181,6 +220,14 @@ export const portfolioProjects: Project[] = [
     industry: "Beauty",
     teamSize: "2 Members",
     year: "2024",
+    testimonial: {
+      name: "Edrick Lim",
+      social: "@limedricks",
+      role: "Owner Velure Parfume",
+      image: "/images/testimonials/edrick-lim.jpg",
+      quote:
+        "Kami butuh landing page untuk brand Velure. Desainnya elegan, sesuai sama karakter produk, dan gampang diakses pelanggan. Hasilnya bikin brand kami kelihatan lebih profesional.",
+    },
   },
   {
     id: "xfl",
@@ -201,6 +248,14 @@ export const portfolioProjects: Project[] = [
     industry: "Sport",
     teamSize: "2 Members",
     year: "2025",
+    testimonial: {
+      name: "Kelvin Luo",
+      social: "@kelvin_luo0287",
+      role: "Owner Xtream Football Community",
+      image: "/images/testimonials/kelvin-luo.jpg",
+      quote:
+        "Website bener kepakai dengan gampang, mayoritas orang di komunitas kami adalah 30 tahun keatas, website yang dibuat dapat dipakai dengan gampang dari segi design dan flow yang jelas dan gampang.",
+    },
   },
   {
     id: "ansama",
@@ -221,6 +276,34 @@ export const portfolioProjects: Project[] = [
     industry: "Logistics",
     teamSize: "1 Member",
     year: "2024",
+  },
+  {
+    id: "tedz",
+    previewLink: "https://www.tedzcreativegroup.com",
+    title: "Creative Landing Page for Innovative Agencies",
+    category: "Web Development",
+    description:
+      "Tedz Production landing page delivers a fresh, modern look that resonates with customers. Fast loading, mobile-friendly, and designed to inspire action.",
+    image: "/images/portfolio/tedz-production.webp",
+    technologies: ["NextJS", "React", "Vercel"],
+    metrics: {
+      users: "5K+",
+      satisfaction: "90%",
+      efficiency: "+30%",
+    },
+    duration: "1 Week",
+    client: "Tedz Production",
+    industry: "Creative Agency",
+    teamSize: "1 Member",
+    year: "2025",
+    testimonial: {
+      name: "Teddy Tanadi",
+      social: "@teddytanadi",
+      role: "Owner Tedz Production",
+      image: "/images/testimonials/teddy-tanadi.jpg",
+      quote:
+        "Timnya komunikatif, kreatif, dan mampu mewujudkan ide kami menjadi sebuah website yang menarik serta fungsional.",
+    },
   },
 ];
 

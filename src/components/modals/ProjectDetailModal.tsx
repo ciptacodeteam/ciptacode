@@ -48,6 +48,49 @@ const ProjectDetailModal = ({
                   width={500}
                   height={300}
                 />
+
+                {/* {data.testimonial && (
+                  <>
+                    <hr className="my-6" />
+                    <Card className="my-6 border-none p-0 shadow-none">
+                      <CardContent className="grid grid-cols-[auto_1fr] gap-3 p-0">
+                        <Avatar className="size-9">
+                          <AvatarImage
+                            alt={data.testimonial.name || "Avatar"}
+                            src={data.testimonial.image}
+                            loading="lazy"
+                            width="120"
+                            height="120"
+                          />
+                          <AvatarFallback>
+                            {data.testimonial?.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")
+                              .toUpperCase()}
+                          </AvatarFallback>
+                        </Avatar>
+
+                        <div>
+                          <h3 className="font-medium">
+                            {data.testimonial.name}
+                          </h3>
+
+                          <span className="text-muted-foreground block text-sm tracking-wide">
+                            {data.testimonial.name} &#8226;{" "}
+                            {data.testimonial.role}
+                          </span>
+
+                          <blockquote className="mt-3">
+                            <p className="text-gray-700 dark:text-gray-300">
+                              {data.testimonial.quote}
+                            </p>
+                          </blockquote>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </>
+                )} */}
               </div>
               <div className="space-y-4">
                 <div className="space-y-1">
