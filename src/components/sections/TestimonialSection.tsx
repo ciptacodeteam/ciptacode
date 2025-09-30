@@ -35,92 +35,79 @@ type Testimonial = {
   role: string;
   image: string;
   quote: string;
+  social?: string;
 };
 
 const testimonials: Testimonial[] = [
   {
-    name: "Andi Wijaya",
-    role: "Owner TokoKita",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    name: "Nico Lim",
+    social: "@nicolimm",
+    role: "Owner PT. Genba Inti Solusindo",
+    image: "/images/testimonials/nico-lim.jpg",
     quote:
-      "Ciptacode berhasil membuat website toko online kami dengan tampilan profesional dan fitur lengkap. Proses pengerjaan sangat cepat dan hasilnya melebihi ekspektasi.",
+      "Kami sangat puas dengan layanan yang diberikan oleh Ciptacode. Timnya profesional, responsif, dan benar-benar memahami kebutuhan bisnis kami.",
   },
   {
-    name: "Siti Rahmawati",
-    role: "Manager PT Solusi Digital",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
+    name: "Teddy Tanadi",
+    social: "@teddytanadi",
+    role: "Owner Tedz Production",
+    image: "/images/testimonials/teddy-tanadi.jpg",
     quote:
-      "Tim Ciptacode sangat komunikatif dan responsif. Website perusahaan kami kini tampil modern dan mudah digunakan oleh klien.",
+      "Timnya komunikatif, kreatif, dan mampu mewujudkan ide kami menjadi sebuah website yang menarik serta fungsional.",
   },
   {
-    name: "Budi Prasetyo",
-    role: "Founder RumahKopi",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
+    name: "Catherine Pho",
+    social: "@catherinepho",
+    role: "Owner Chez Bakery and Cafe",
+    image: "/images/testimonials/catherine-pho.jpg",
     quote:
-      "Pembuatan website bisnis kopi kami berjalan lancar. Fitur reservasi dan katalog produk sangat membantu meningkatkan penjualan.",
+      "Website benar-benar membantu kami. Pelanggan jadi lebih gampang lihat menu dan promo. Prosesnya cepat, desainnya cakep, dan timnya selalu siap bantu kalau ada yang perlu.",
   },
   {
-    name: "Dewi Lestari",
-    role: "Product Manager PT Mitra ERP",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    name: "Michael Chang",
+    social: "@michaelchang_s",
+    role: "Owner PT. Tujuh Anugrah Abadi",
+    image: "/images/testimonials/michael-chang.jpg",
     quote:
-      "ERP yang dikembangkan Ciptacode sangat memudahkan pengelolaan data perusahaan. Integrasi dengan website berjalan mulus.",
+      "Mereka cepat tanggap, ngerti apa yang kami butuhkan, Puas banget sama hasilnya.",
   },
   {
-    name: "Rizky Saputra",
-    role: "CEO StartupEdu",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    name: "Kelvin Luo",
+    social: "@kelvin_luo0287",
+    role: "Owner Xtream Football Community",
+    image: "/images/testimonials/kelvin-luo.jpg",
     quote:
-      "Website edukasi yang dibuat Ciptacode sangat interaktif dan user friendly. Timnya profesional dan selalu memberikan solusi terbaik.",
+      "Website bener kepakai dengan gampang, mayoritas orang di komunitas kami adalah 30 tahun keatas, website yang dibuat dapat dipakai dengan gampang dari segi design dan flow yang jelas dan gampang.",
   },
   {
-    name: "Fitri Handayani",
-    role: "Marketing PT Sukses Bersama",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    name: "Edrick Lim",
+    social: "@limedricks",
+    role: "Owner Velure Parfume",
+    image: "/images/testimonials/edrick-lim.jpg",
     quote:
-      "Ciptacode membantu kami membuat landing page promosi yang menarik dan meningkatkan konversi penjualan secara signifikan.",
+      "Kami butuh landing page untuk brand Velure. Desainnya elegan, sesuai sama karakter produk, dan gampang diakses pelanggan. Hasilnya bikin brand kami kelihatan lebih profesional.",
   },
   {
-    name: "Joko Santoso",
-    role: "Owner BengkelMobil",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
+    name: "Chandra",
+    social: "@mrciek",
+    role: "Owner PT. Mutual Properti Indonesia",
+    image: "/images/testimonials/chandra.jpeg",
     quote:
-      "Website bengkel kami kini mudah ditemukan di Google dan pelanggan bisa booking online. Terima kasih Ciptacode!",
+      "Website properti yang dibuat Ciptacode sangat membantu kami dalam memasarkan proyek-proyek baru. Fitur pencarian dan galeri propertinya sangat user-friendly.",
   },
   {
-    name: "Maya Putri",
-    role: "COO PT Kreatif Media",
+    name: "Jessica Pramudita",
+    role: "Manager Salon Kecantikan",
     image: "https://randomuser.me/api/portraits/women/8.jpg",
     quote:
-      "Aplikasi mobile dan website yang dibuat Ciptacode sangat membantu operasional harian perusahaan kami.",
+      "Ciptacode membantu kami membuat website yang elegan dan mudah digunakan. Sekarang pelanggan bisa booking layanan secara online, yang sangat meningkatkan efisiensi operasional kami.",
   },
   {
-    name: "Fajar Nugroho",
-    role: "Founder EventPro",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
+    name: "Eric Tan",
+    role: "Manager Toko Jam",
+    image: "https://randomuser.me/api/portraits/men/15.jpg",
     quote:
-      "Website event management kami tampil modern dan fitur registrasi online sangat memudahkan peserta.",
-  },
-  {
-    name: "Dian Pratama",
-    role: "Owner Restoku",
-    image: "https://randomuser.me/api/portraits/men/10.jpg",
-    quote:
-      "Ciptacode membuat website restoran kami dengan sistem pemesanan online yang sangat praktis dan mudah digunakan.",
-  },
-  {
-    name: "Agus Setiawan",
-    role: "IT Supervisor PT Amanah",
-    image: "https://randomuser.me/api/portraits/men/11.jpg",
-    quote:
-      "Website internal perusahaan yang dikembangkan Ciptacode sangat membantu komunikasi dan kolaborasi tim.",
-  },
-  {
-    name: "Lina Marlina",
-    role: "Owner KlinikSehat",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
-    quote:
-      "Website klinik kami kini memiliki fitur booking dan konsultasi online, sangat memudahkan pasien dan dokter.",
+      "Website e-commerce yang dibuat Ciptacode sangat membantu kami menjangkau lebih banyak pelanggan. Desainnya menarik dan navigasinya mudah, membuat pengalaman belanja online jadi menyenangkan.",
   },
 ];
 
@@ -171,46 +158,10 @@ const TestimonialSection = () => {
           </p>
         </motion.div>
 
-        {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="glass h-full border-0 !bg-white">
-                <CardContent className="p-8 py-4">
-                  <div className="mb-4 flex">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 fill-yellow-500 text-yellow-500"
-                      />
-                    ))}
-                  </div>
-
-                  <blockquote className="text-muted-foreground mb-6 italic">
-                    &quot;{testimonial.content}&quot;
-                  </blockquote>
-
-                  <div>
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-muted-foreground text-sm">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div> */}
-
         <div className="mt-8 hidden gap-3 sm:grid-cols-2 md:mt-12 lg:grid lg:grid-cols-3">
           {testimonialChunks.map((chunk, chunkIndex) => (
             <div key={chunkIndex} className="space-y-3">
-              {chunk.map(({ name, role, quote, image }, index) => (
+              {chunk.map(({ name, role, quote, image, social }, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -230,11 +181,24 @@ const TestimonialSection = () => {
                           width="120"
                           height="120"
                         />
-                        <AvatarFallback>ST</AvatarFallback>
+                        <AvatarFallback>
+                          {name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")
+                            .toUpperCase()}
+                        </AvatarFallback>
                       </Avatar>
 
                       <div>
-                        <h3 className="font-medium">{name}</h3>
+                        <h3 className="font-medium">
+                          {name}{" "}
+                          {social && (
+                            <span className="text-muted-foreground text-sm">
+                              &#8226; {social}
+                            </span>
+                          )}
+                        </h3>
 
                         <span className="text-muted-foreground block text-sm tracking-wide">
                           {role}
